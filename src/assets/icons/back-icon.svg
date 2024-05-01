@@ -1,0 +1,22 @@
+<svg width="45.000000" height="44.000000" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1277_40722">
+			<rect id="Icon" width="45.000000" height="44.000000" transform="matrix(-1 0 0 1 45 0)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Icon" width="45.000000" height="44.000000" transform="matrix(-1 0 0 1 45 0)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1277_40722)">
+		<mask id="mask1277_40723" mask-type="alpha" maskUnits="userSpaceOnUse" x="1.333008" y="0.333984" width="43.333332" height="43.333332">
+			<path id="Vector" d="M22.99 0.33C34.98 0.33 44.66 10.01 44.66 22C44.66 33.98 34.98 43.66 22.99 43.66C11.01 43.66 1.33 33.98 1.33 22C1.33 10.01 11.01 0.33 22.99 0.33ZM22.99 39.33C32.55 39.33 40.33 31.55 40.33 22C40.33 12.44 32.55 4.66 22.99 4.66C13.44 4.66 5.66 12.44 5.66 22C5.66 31.55 13.44 39.33 22.99 39.33Z" fill="#BF3636" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</mask>
+		<g mask="url(#mask1277_40723)">
+			<rect id="Default" width="55.384617" height="60.923080" transform="matrix(-1 0 0 1 50.1924 -8.46094)" fill="#FFFFFF" fill-opacity="1.000000"/>
+		</g>
+		<g mask="url(#mask1277_40723)"/>
+		<g mask="url(#mask1277_40723)"/>
+	</g>
+	<path id="Arrow" d="M15.62 23.5L21.54 29.42C22.13 30.01 22.13 30.95 21.54 31.54C20.95 32.14 20.01 32.14 19.42 31.54L10.93 23.06C10.34 22.46 10.34 21.53 10.93 20.93L19.42 12.45C20.01 11.85 20.95 11.85 21.54 12.45C22.13 13.04 22.13 13.98 21.54 14.57L15.62 20.5L34 20.5C34.83 20.5 35.5 21.16 35.5 22C35.5 22.83 34.83 23.5 34 23.5L15.62 23.5Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+</svg>

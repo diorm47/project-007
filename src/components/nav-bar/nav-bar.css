@@ -1,0 +1,63 @@
+nav {
+  position: relative;
+  background: rgb(40, 40, 40);
+  padding: 15px 0;
+}
+
+.nav_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.nav_logo {
+    position: absolute;
+    top: -15px;
+    left: 0;
+}
+.nav_logo_place {
+  width: 110px;
+}
+.nav_menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.nav_menu p {
+  /* PC & Tablet/H6/Bold */
+  color: rgb(255, 255, 255);
+ font-family: FuturaCyrillicBold;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.nav_right {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.main_btn_temp {
+  width: 180px;
+  height: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: rgb(47, 87, 191);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.main_btn_temp p {
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicMedium;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}

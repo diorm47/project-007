@@ -1,0 +1,20 @@
+<svg width="27.000000" height="36.000000" viewBox="0 0 27 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip3_11541">
+			<rect id="Target=success" width="27.000000" height="36.000000" transform="translate(0.000000 -0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip3_11541)">
+		<mask id="mask3_11542" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="5.500000" width="27.000000" height="23.000000">
+			<path id="Vector" d="M8.86 28.5L0 19.3L4.03 15.12L8.86 20.13L22.96 5.5L27 9.68L8.86 28.5Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</mask>
+		<g mask="url(#mask3_11542)">
+			<rect id="Default" width="27.000000" height="36.000000" transform="matrix(-1 1.22465e-16 1.22465e-16 1 27 -0.5)" fill="#FFFFFF" fill-opacity="1.000000"/>
+		</g>
+		<g mask="url(#mask3_11542)"/>
+		<g mask="url(#mask3_11542)"/>
+	</g>
+</svg>

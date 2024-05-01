@@ -1,0 +1,21 @@
+<svg width="45.000000" height="44.000000" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip950_18205">
+			<rect id="BtnIcons" width="45.000000" height="44.000000" transform="matrix(-1 0 0 1 45 0)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="BtnIcons" width="45.000000" height="44.000000" transform="matrix(-1 0 0 1 45 0)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip950_18205)">
+		<mask id="mask3_1578" mask-type="alpha" maskUnits="userSpaceOnUse" x="1.333008" y="0.332031" width="43.333332" height="43.333332">
+			<path id="Vector" d="M23 0.33C34.98 0.33 44.66 10.01 44.66 21.99C44.66 33.98 34.98 43.66 23 43.66C11.01 43.66 1.33 33.98 1.33 21.99C1.33 10.01 11.01 0.33 23 0.33ZM23 39.33C32.55 39.33 40.33 31.55 40.33 21.99C40.33 12.44 32.55 4.66 23 4.66C13.44 4.66 5.66 12.44 5.66 21.99C5.66 31.55 13.44 39.33 23 39.33ZM15.22 11.16L23 18.94L30.77 11.16L33.83 14.22L26.05 21.99L33.83 29.77L30.77 32.83L23 25.05L15.22 32.83L12.16 29.77L19.94 21.99L12.16 14.22L15.22 11.16Z" fill="#BF3636" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</mask>
+		<g mask="url(#mask3_1578)">
+			<rect id="Default" width="55.384617" height="60.923080" transform="matrix(-1 0 0 1 50.1919 -8.46094)" fill="#FFFFFF" fill-opacity="1.000000"/>
+		</g>
+		<g mask="url(#mask3_1578)"/>
+		<g mask="url(#mask3_1578)"/>
+	</g>
+</svg>

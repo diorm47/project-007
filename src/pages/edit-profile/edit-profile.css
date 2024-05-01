@@ -1,0 +1,212 @@
+.edit_profile {
+  width: 100%;
+  min-height: 100vh;
+}
+.edit_profile_top {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.762) 0%,
+      rgba(0, 8, 30, 0.808) 100%
+    ),
+    url(../../assets/images/edit-profile-top-bg.png), rgb(25, 25, 25);
+  padding: 40px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.edit_profile_top h1 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.edit_profile_wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.edit_profile_user_avatar {
+  background: rgb(242, 242, 242);
+  padding: 80px;
+}
+.edit_user_avatar {
+  border-radius: 10px;
+  position: relative;
+  width: 197px;
+  height: 204px;
+}
+.edit_user_avatar img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.upload_avatar {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -29px;
+  cursor: pointer;
+}
+.edit_profile_content {
+  padding: 80px;
+  background: #fff;
+  width: 100%;
+  min-height: 90vh;
+}
+.react-tabs__tab-list {
+  border: none !important;
+  margin: 0 !important;
+}
+.react-tabs__tab {
+  border: none !important;
+  padding: 0 !important;
+  color: rgb(167, 152, 149);
+  font-family: FuturaCyrillicMedium;
+  font-size: 48px;
+  font-weight: 450;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.react-tabs__tab-list {
+  display: flex;
+  gap: 60px;
+}
+.react-tabs__tab--selected {
+  color: rgb(47, 87, 191) !important;
+}
+.edit_profile_content_line {
+  width: 100%;
+  height: 1px;
+  background: rgb(179, 179, 179);
+  margin: 40px 0;
+}
+.edit_tab_item p {
+  /* PC & Tablet/H4/Medium */
+  color: rgb(0, 0, 0);
+  font-family: FuturaCyrillicMedium;
+  font-size: 24px;
+  font-weight: 450;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.edit_tab_item input {
+  box-sizing: border-box;
+  /* Accent/accent-color */
+  border: 1px solid rgb(47, 87, 191);
+  border-radius: 5px;
+  height: 60px;
+
+  width: 100%;
+  background: rgb(248, 248, 248);
+
+  /* PC & Tablet/H5/Medium */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicMedium;
+  text-indent: 15px;
+  font-size: 20px;
+  font-weight: 450;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.edit_tab_items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.edit_tab_item .css-13cymwt-control,
+.edit_tab_item .css-t3ipsp-control {
+  box-sizing: border-box;
+  /* Accent/accent-color */
+  border: 1px solid rgb(47, 87, 191);
+  border-radius: 5px;
+  height: 60px;
+  max-width: 450px;
+  width: 100%;
+  background: rgb(248, 248, 248);
+}
+.edit_tab_item .css-qbdosj-Input {
+  height: 60px;
+  margin: 0;
+  padding: 0;
+}
+.edit_tab_item .css-1jqq78o-placeholder {
+  margin-left: 15px;
+  /* PC & Tablet/H5/Medium */
+  color: rgb(40, 40, 40) !important;
+  font-family: FuturaCyrillicMedium;
+  font-size: 20px;
+  font-weight: 450;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.edit_action_btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.edit_action_btns button {
+  width: 215px;
+}
+.close_cancel_btn {
+  box-sizing: border-box;
+  /* Accent/warning-accent */
+  border: 2px solid rgb(191, 54, 54);
+  border-radius: 5px;
+}
+.close_cancel_btn p {
+  color: rgb(191, 54, 54);
+}
+.close_cancel_btn svg {
+  width: 26px;
+}
+.close_cancel_btn svg * {
+  fill: rgb(191, 54, 54);
+}
+
+.edit_tab_item_textarea textarea {
+  box-sizing: border-box;
+  /* Accent/accent-color */
+  border: 1px solid rgb(47, 87, 191);
+  border-radius: 5px;
+  height: 307px;
+  background: rgb(248, 248, 248);
+  width: 100%;
+  padding: 15px;
+  /* PC & Tablet/H5/Light */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.edit_socials_content {
+  border-radius: 10px;
+  padding: 20px;
+  background: rgb(245, 245, 245);
+}
+
+.edit_tab_item {
+  position: relative;
+}
+.edit_tab_item .hide_pass {
+  position: absolute;
+  bottom: 12px;
+  top: auto;
+}

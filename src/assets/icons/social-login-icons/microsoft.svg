@@ -1,0 +1,17 @@
+<svg width="21.000000" height="21.000000" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip950_18203">
+			<rect id="Icon / Microsoft" width="21.000000" height="21.000000" transform="translate(0.000000 -0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Icon / Microsoft" width="21.000000" height="21.000000" transform="translate(0.000000 -0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip950_18203)">
+		<path id="Vector" d="M1 0.5L10 0.5L10 9.5L1 9.5L1 0.5Z" fill="#F25022" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="Vector" d="M1 10.5L10 10.5L10 19.5L1 19.5L1 10.5Z" fill="#00A4EF" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="Vector" d="M11 0.5L20 0.5L20 9.5L11 9.5L11 0.5Z" fill="#7FBA00" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="Vector" d="M11 10.5L20 10.5L20 19.5L11 19.5L11 10.5Z" fill="#FFB900" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>

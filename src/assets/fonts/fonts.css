@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "FuturaCyrillicMedium";
+  src: url("./FuturaCyrillicMedium.ttf");
+}
+@font-face {
+  font-family: "FuturaCyrillicLight";
+  src: url("./FuturaCyrillicLight.ttf");
+}
+@font-face {
+  font-family: "FuturaCyrillicHeavy";
+  src: url("./FuturaCyrillicHeavy.ttf");
+}
+@font-face {
+  font-family: "FuturaCyrillicExtraBold";
+  src: url("./FuturaCyrillicExtraBold.ttf");
+}
+@font-face {
+  font-family: "FuturaCyrillicDemi";
+  src: url("./FuturaCyrillicDemi.ttf");
+}
+@font-face {
+  font-family: "FuturaCyrillicBook";
+  src: url("./FuturaCyrillicBook.ttf");
+}
+@font-face {
+  font-family: "FuturaCyrillicBold";
+  src: url("./FuturaCyrillicBold.ttf");
+}

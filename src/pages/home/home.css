@@ -1,0 +1,109 @@
+.home_header {
+  background: url(../../assets/images/header-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 150px 0;
+}
+
+.home_header_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.home_header_content_title h1 {
+  /* PC & Tablet/H1/Bold */
+  font-family: FuturaCyrillicBold;
+  color: rgb(255, 255, 255);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+
+.home_header_content_desc p {
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicLight;
+  max-width: 840px;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header_form {
+  border-radius: 5px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.316);
+}
+.header_form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.header_form_select .css-13cymwt-control,
+.header_form_select .css-t3ipsp-control {
+  width: 269.67px;
+  height: 60px;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 10px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.css-1jqq78o-placeholder {
+  text-align: left;
+}
+.css-1fdsijx-ValueContainer {
+  padding: 0 !important;
+}
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+.css-1xc3v61-indicatorContainer svg * {
+  fill: rgb(47, 87, 191);
+}
+.css-1jqq78o-placeholder {
+  color: rgb(179, 179, 179) !important;
+  font-size: 18px;
+  font-family: FuturaCyrillicMedium;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.home_header_content_see_more_btn {
+  box-sizing: border-box;
+  border: 2px solid rgb(179, 179, 179);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.home_header_content_see_more_btn p {
+  color: rgb(179, 179, 179);
+  font-size: 18px;
+  font-family: FuturaCyrillicMedium;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.home_header_content_see_more svg {
+  cursor: pointer;
+}
