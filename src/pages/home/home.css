@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  padding: 150px 0;
+  padding: 150px 0 110px;
 }
 
 .home_header_content {
@@ -106,4 +106,174 @@
 
 .home_header_content_see_more svg {
   cursor: pointer;
+}
+
+/* about */
+.home_about {
+  background: url(../../assets/images/about-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home_about_wrapper {
+  padding: 80px 0;
+  background: #ffffffca;
+}
+.home_about_wrapper_content {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+}
+.home_about_wrapper_left h2 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.home_about_wrapper_left p {
+  font-family: FuturaCyrillicLight;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0%;
+  color: rgb(105, 105, 105);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.home_about_wrapper_left span {
+  font-weight: 450;
+  font-family: FuturaCyrillicMedium;
+}
+.home_about_wrapper_left a {
+  color: rgb(47, 87, 191);
+}
+
+.home_moto {
+  padding: 160px 0;
+  text-align: center;
+  background: linear-gradient(
+      110.35deg,
+      rgba(73, 73, 75, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/home-moto-bg.jpg);
+}
+
+.home_moto h1 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.home_moto p {
+  /* [object Object] */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicLight;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.home_moto p a {
+  color: rgb(83, 126, 239);
+}
+
+.see_more_btn_temp {
+  width: 180px;
+  height: 60px;
+}
+.how_it_works .see_more_btn_temp {
+  margin-top: 50px;
+}
+.see_more_btn_temp p {
+  margin: 0;
+}
+.home_tutorial {
+  padding: 80px 0;
+  background: #2f3442;
+}
+
+.home_tutorial_title h2 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home_tutorial_cards {
+  margin: 40px;
+}
+.home_tutorial_cards,
+.home_tutorial_card_title {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.home_tutorial_card_title {
+  margin: 20px 0;
+}
+
+.home_tutorial_card_title h4 {
+  /* PC & Tablet/H3/Medium */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicMedium;
+  font-size: 32px;
+  font-weight: 450;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.home_tutorial_card_btn {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 67px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Accent/accent-color */
+  background: rgb(47, 87, 191);
+}
+
+.home_tutorial_card_desc p {
+  /* PC & Tablet/H5/Light */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.browse_all {
+  box-sizing: border-box;
+  border: 2px solid rgb(179, 179, 179);
+  border-radius: 5px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;  
+  margin: 0 auto;
 }

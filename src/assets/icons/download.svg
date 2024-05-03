@@ -1,0 +1,20 @@
+<svg width="27.000000" height="36.000000" viewBox="0 0 27 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip8_56923">
+			<rect id="Target=download" width="27.000000" height="36.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip8_56923)">
+		<mask id="mask8_56919" mask-type="alpha" maskUnits="userSpaceOnUse" x="2.000000" y="7.000000" width="22.000000" height="22.000000">
+			<path id="Vector" d="M13 23.62L7.44 18.05L8.55 16.92L12.21 20.59L12.21 7L13.78 7L13.78 20.59L17.44 16.93L18.55 18.05L13 23.62ZM4.53 29C3.81 29 3.21 28.75 2.72 28.27C2.24 27.78 2 27.18 2 26.46L2 22.65L3.57 22.65L3.57 26.46C3.57 26.7 3.67 26.92 3.87 27.12C4.07 27.32 4.29 27.42 4.53 27.42L21.46 27.42C21.7 27.42 21.92 27.32 22.12 27.12C22.32 26.92 22.42 26.7 22.42 26.46L22.42 22.65L24 22.65L24 26.46C24 27.18 23.75 27.78 23.27 28.27C22.78 28.75 22.18 29 21.46 29L4.53 29Z" fill="#000000" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</mask>
+		<g mask="url(#mask8_56919)">
+			<rect id="Default" width="27.000000" height="36.000000" transform="matrix(-1 1.22465e-16 1.22465e-16 1 27 0)" fill="#FFFFFF" fill-opacity="1.000000"/>
+		</g>
+		<g mask="url(#mask8_56919)"/>
+		<g mask="url(#mask8_56919)"/>
+	</g>
+</svg>
