@@ -7,6 +7,8 @@ import Reset from "./pages/login-auth-reset/reset";
 import EditProfile from "./pages/edit-profile/edit-profile";
 import Profile from "./pages/profile/profile";
 import Footer from "./components/footer/footer";
+import HowItWorks from "./pages/how-it-works/how-it-works";
+import AffiliateProgram from "./pages/affiliate-program/affiliate-program";
 
 function App() {
   const location = useLocation();
@@ -30,6 +32,8 @@ function App() {
           <Route path="/reset" element={<Reset />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/affiliate-program" element={<AffiliateProgram />} />
         </Routes>
       </div>
       {location.pathname !== "/login" &&

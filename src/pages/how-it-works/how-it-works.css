@@ -1,0 +1,103 @@
+.header_template {
+  padding-top: 100px;
+}
+.navigation_links {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 40px;
+}
+.navigation_links a {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: rgb(47, 87, 191);
+  font-family: FuturaCyrillicMedium;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-decoration-line: underline;
+}
+.navigation_links p {
+  /* PC & Tablet/H6/Medium */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicMedium;
+
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.header_template_title h1 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.header_template_text p {
+  /* PC & Tablet/H4/Light */
+  color: rgb(105, 105, 105);
+  font-family: FuturaCyrillicLight;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.description_text {
+  padding: 80px 0;
+}
+.description_text h2 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicBold;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.description_text_flex {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.description_text p {
+  /* PC & Tablet/H5/Light */
+  color: rgb(84, 83, 83);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.mw_527 {
+    max-width: 527px;
+}
+.description_text p:last-child {
+    margin-bottom: 0;
+}
+.description_text h2 {
+    margin-top:80px;
+}
+.description_text h2:nth-child(1) {
+    margin-top: 0;
+}

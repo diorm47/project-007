@@ -32,10 +32,10 @@ function Footer() {
                 <NavLink to="">
                   <p>Full library</p>
                 </NavLink>
-                <NavLink to="">
+                <NavLink to="/how-it-works">
                   <p>How it works</p>
                 </NavLink>
-                <NavLink to="">
+                <NavLink to="/affiliate-program">
                   <p>Affiliate program</p>
                 </NavLink>
                 <NavLink to="">

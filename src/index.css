@@ -11,11 +11,11 @@ a {
 
 button,
 input,
-textarea {
+textarea, select {
   border: none;
   outline: none;
 }
-button {
+button, select {
   cursor: pointer;
 }
 
