@@ -1,0 +1,93 @@
+
+footer {
+    margin-top: -2px;
+}
+.footer_main {
+  background: #161616;
+  padding-bottom: 40px;
+}
+
+.footer_wrapper {
+  display: flex;
+  align-items: start;
+  gap: 80px;
+}
+.footer_menu {
+  padding-top: 50px;
+  display: flex;
+  align-items: start;
+  width: 100%;
+  justify-content: space-between;
+}
+.footer_menu_item h3 {
+  /* PC & Tablet/H5/Extra Bold */
+  color: rgb(255, 254, 254);
+  font-family: FuturaCyrillicExtraBold;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer_menu_list p {
+  /* PC & Tablet/H6/Medium */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicMedium;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.footer_menu_line {
+  background: rgba(64, 64, 64, 0.5);
+  width: 1px;
+
+  height: 280.77px;
+}
+.footer_payment_item {
+  cursor: pointer;
+}
+
+.footer_payments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.footer_contacts div {
+  width: 67px;
+  filter: brightness(0.7);
+}
+.footer_email {
+  margin-top: 40px;
+}
+.footer_email p {
+  /* PC & Tablet/H6/Light */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicLight;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.footer_bottom {
+  background: rgb(18, 18, 18);
+  padding: 15px 0;
+}
+.footer_bottom p {
+  /* PC & Tablet/H6/Light */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicLight;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+}

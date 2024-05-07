@@ -6,6 +6,7 @@ import Auth from "./pages/login-auth-reset/auth";
 import Reset from "./pages/login-auth-reset/reset";
 import EditProfile from "./pages/edit-profile/edit-profile";
 import Profile from "./pages/profile/profile";
+import Footer from "./components/footer/footer";
 
 function App() {
   const location = useLocation();
@@ -31,6 +32,14 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
+      {location.pathname !== "/login" &&
+      location.pathname !== "/auth" &&
+      location.pathname !== "/reset" &&
+      location.pathname !== "/edit-profile" ? (
+        <Footer />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

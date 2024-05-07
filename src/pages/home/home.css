@@ -274,6 +274,82 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;  
+  height: 60px;
   margin: 0 auto;
+}
+
+.reviews {
+  background: url(../../assets/images/about-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.reviews_wrapper {
+  padding: 80px 0;
+  padding-bottom: 100px;
+  background: #ffffffca;
+}
+.reviews_wrapper_title h2 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.join_community {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.795) 0%,
+      rgba(0, 8, 30, 0.808) 100%
+    ),
+    url(../../assets/images/login-bg.png);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.join_community_wrapper {
+  padding: 190px 0;
+  /* background: #5b5b5be9; */
+}
+
+.join_community_wrapper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.join_community_wrapper h2 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+
+}
+
+.join_community_wrapper p {
+  /* PC & Tablet/H4/Light */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicLight;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: center;
+  max-width: 547px;
+  width: 100%;
+  
 }

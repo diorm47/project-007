@@ -12,6 +12,7 @@ import { ReactComponent as Download } from "../../assets/icons/download.svg";
 import tutorial1 from "../../assets/images/tutorial-1.png";
 import tutorial2 from "../../assets/images/tutorial-2.png";
 import tutorial3 from "../../assets/images/tutorial-3.png";
+import ReviewsCarousel from "../../components/reviews-carousel/rev-carousel";
 
 function Home() {
   const customStyles = {
@@ -204,6 +205,28 @@ function Home() {
           <div className="home_header_content_see_more_btn browse_all">
             <p>Browse all</p>
             <More />
+          </div>
+        </div>
+      </section>
+      <section className="reviews">
+        <div className="reviews_wrapper ">
+          <div className="reviews_wrapper_title container">
+            <h2>Reviews</h2>
+          </div>
+          <ReviewsCarousel />
+        </div>
+      </section>
+      <section className="join_community">
+        <div className="join_community_wrapper">
+          <h2>Join the community</h2>
+          <p>
+            Share your assets and become a valued contributor to the Distortion
+            Grids Database with bonus access to the library. Let's build an
+            incredible library of distortion grids!
+          </p>
+          <div className="main_btn_temp see_more_btn_temp">
+            <p>Learn how</p>
+            <ArrowRight />
           </div>
         </div>
       </section>
