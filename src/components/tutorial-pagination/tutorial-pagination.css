@@ -1,34 +1,34 @@
-.tutrial_pagination ul {
+.tutorial_pagination ul {
   display: flex;
   align-items: center;
   list-style: none;
 }
-.tutrial_pagination .previous {
+.tutorial_pagination .previous {
   margin-right: 25px;
 }
-.tutrial_pagination .next {
+.tutorial_pagination .next {
   margin-left: 25px;
 }
-.tutrial_pagination .previous,
-.tutrial_pagination .next {
+.tutorial_pagination .previous,
+.tutorial_pagination .next {
   box-sizing: border-box;
   border: 2px solid #2f57bf;
   border-radius: 5px;
   width: 60px;
 }
-.tutrial_pagination ul .disabled {
+.tutorial_pagination ul .disabled {
   border: 2px solid #b3b3b3;
   cursor: default;
 }
-.tutrial_pagination ul .disabled a {
+.tutorial_pagination ul .disabled a {
   cursor: default;
 }
-.tutrial_pagination ul .disabled svg * {
+.tutorial_pagination ul .disabled svg * {
   fill: #b3b3b3;
 }
 
-.tutrial_pagination ul li,
-.tutrial_pagination ul li a {
+.tutorial_pagination ul li,
+.tutorial_pagination ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,10 +46,10 @@
   letter-spacing: 0%;
   text-align: center;
 }
-.tutrial_pagination ul .selected {
+.tutorial_pagination ul .selected {
   width: 60px;
 }
-.tutrial_pagination ul .selected a {
+.tutorial_pagination ul .selected a {
   border-radius: 5px;
   /* PC & Tablet/H6/Bold */
   color: rgb(255, 255, 255);

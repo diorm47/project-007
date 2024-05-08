@@ -181,6 +181,7 @@ function Tutorials() {
     },
   ];
   const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
   return (
     <>
       <div className="header_template container">
@@ -195,7 +196,12 @@ function Tutorials() {
         </div>
       </div>
       <div className="tutorials_list container">
-        <TutorialPagination items={AllData} setData={setData} />
+        <TutorialPagination
+          items={AllData}
+          setData={setData}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
         <div className="tutorial_cards">
           {data && data.length
             ? data.map((item, index) => (
@@ -203,8 +209,12 @@ function Tutorials() {
               ))
             : ""}
         </div>
-        <TutorialPagination items={AllData} setData={setData} />
-
+        <TutorialPagination
+          items={AllData}
+          setData={setData}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </>
   );
