@@ -9,6 +9,7 @@ import Profile from "./pages/profile/profile";
 import Footer from "./components/footer/footer";
 import HowItWorks from "./pages/how-it-works/how-it-works";
 import AffiliateProgram from "./pages/affiliate-program/affiliate-program";
+import Tutorials from "./pages/tutorials/tutorials";
 
 function App() {
   const location = useLocation();
@@ -34,6 +35,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
+          <Route path="/tutorials" element={<Tutorials />} />
+
         </Routes>
       </div>
       {location.pathname !== "/login" &&

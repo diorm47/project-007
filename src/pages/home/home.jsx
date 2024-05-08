@@ -13,6 +13,7 @@ import tutorial1 from "../../assets/images/tutorial-1.png";
 import tutorial2 from "../../assets/images/tutorial-2.png";
 import tutorial3 from "../../assets/images/tutorial-3.png";
 import ReviewsCarousel from "../../components/reviews-carousel/rev-carousel";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const customStyles = {
@@ -125,10 +126,12 @@ function Home() {
                 about our process for preparing and testing distortion grids and
                 presets.
               </p>
-              <div className="main_btn_temp see_more_btn_temp">
-                <p>See more</p>
-                <ArrowRight />
-              </div>
+              <NavLink to="/how-it-works">
+                <div className="main_btn_temp see_more_btn_temp">
+                  <p>See more</p>
+                  <ArrowRight />
+                </div>
+              </NavLink>
             </div>
             <div className="home_about_wrapper_right">
               <QualityMark />

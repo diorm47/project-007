@@ -23,7 +23,7 @@ function NavBar() {
           <NavLink to="/affiliate-program">
             <p>Affiliate program</p>
           </NavLink>
-          <NavLink to="">
+          <NavLink to="/tutorials">
             <p>Tutorials</p>
           </NavLink>
           <NavLink to="">

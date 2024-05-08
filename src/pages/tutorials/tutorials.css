@@ -1,0 +1,10 @@
+.tutorial_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 24px;
+  margin: 20px 0;
+}
+.tutorials_list {
+  padding: 40px 0 80px 0;
+}

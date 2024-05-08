@@ -1,0 +1,21 @@
+.tutorial_card h4 {
+  /* PC & Tablet/H3/Medium */
+  color: rgb(40, 40, 40);
+
+  font-size: 32px;
+  font-weight: 450;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.tutorial_card p {
+  /* PC & Tablet/H5/Light */
+  color: rgb(40, 40, 40);
+
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
