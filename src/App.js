@@ -13,6 +13,7 @@ import Tutorials from "./pages/tutorials/tutorials";
 import Guide from "./pages/guide/guide";
 import Faq from "./pages/faq/faq";
 import MagneticGrid from "./pages/magnetic-grid/magnetic-grid";
+import NotFound from "./pages/not-found/not-found";
 
 function App() {
   const location = useLocation();
@@ -43,7 +44,7 @@ function App() {
           <Route path="/magnetic-grid" element={<MagneticGrid />} />
 
           <Route path="/faq" element={<Faq />} />
-
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       {location.pathname !== "/login" &&
