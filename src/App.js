@@ -10,6 +10,7 @@ import Footer from "./components/footer/footer";
 import HowItWorks from "./pages/how-it-works/how-it-works";
 import AffiliateProgram from "./pages/affiliate-program/affiliate-program";
 import Tutorials from "./pages/tutorials/tutorials";
+import Guide from "./pages/guide/guide";
 
 function App() {
   const location = useLocation();
@@ -36,6 +37,7 @@ function App() {
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
           <Route path="/tutorials" element={<Tutorials />} />
+          <Route path="/guide" element={<Guide />} />
 
         </Routes>
       </div>

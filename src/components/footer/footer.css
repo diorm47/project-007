@@ -1,6 +1,7 @@
-
 footer {
-    margin-top: -2px;
+  margin-top: -2px;
+  z-index: 11;
+  position: relative;
 }
 .footer_main {
   background: #161616;

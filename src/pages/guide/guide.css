@@ -1,0 +1,294 @@
+.guide_img {
+  height: 380px;
+  width: 100%;
+  background: linear-gradient(
+      113.75deg,
+      rgba(40, 40, 40, 0.6) 1.541%,
+      rgba(0, 8, 30, 0.6) 86.055%
+    ),
+    url(../../assets/images/header-bg.png), rgb(0, 0, 0);
+  background-position: center;
+}
+.guide_content {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.guide_content_navigation {
+  width: 30%;
+  background: #f2f2f2;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.guide_content_nav {
+  padding-left: 80px;
+  padding-top: 80px;
+}
+.guide_content_nav_list_item {
+  height: 41px;
+}
+.guide_content_nav_list_item p {
+  /* PC & Tablet/H4/Bold */
+  color: rgb(80, 80, 80);
+  font-family: FuturaCyrillicBold;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.guide_content_items {
+  padding: 80px;
+  padding-top: 40px;
+  width: 70%;
+}
+.guide_content_item_title {
+  border-radius: 10px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.guide_content_item_title p {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.guide_content_item1 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/login-bg.png);
+  background-position: center;
+  background-size: cover;
+}
+.guide_content_item2 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/guide/camera-setup.png);
+  background-position: center;
+  background-size: cover;
+}
+.guide_content_item3 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/guide/lens-setup.png);
+
+  background-position: center;
+  background-size: cover;
+}
+.guide_content_item4 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/guide/before.png);
+
+  background-position: center;
+  background-size: cover;
+}
+.guide_content_item5 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/guide/next.png);
+
+  background-position: center;
+  background-size: cover;
+}
+.guide_content_item6 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/guide/shooting.png);
+
+  background-position: center;
+  background-size: cover;
+}
+.guide_content_item7 {
+  background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/guide/aditional.png);
+
+  background-position: center;
+  background-size: cover;
+}
+
+.guide_content_item_box {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+.guide_content_item_list {
+  padding-left: 18px;
+}
+.guide_content_item_list li {
+  /* PC & Tablet/H5/Light */
+  color: rgb(0, 0, 0);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.guide_content_item_line {
+  width: 100%;
+  height: 2px;
+  background: rgb(179, 179, 179);
+  margin: 40px 0;
+}
+
+.guide_content_item {
+  padding: 40px 0;
+}
+
+.guide_content_item_box_center {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+.guide_content_item_box_center_text h3 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(47, 87, 191);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.guide_content_item_box_center_text h2 {
+  /* PC & Tablet/H4/Medium */
+  color: rgb(0, 0, 0);
+  font-family: FuturaCyrillicMedium;
+  font-size: 24px;
+  font-weight: 450;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.guide_content_item_box_center_text p {
+  /* PC & Tablet/H5/Light */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.guide_content_item_list span {
+  color: rgb(47, 87, 191);
+}
+.mb60px {
+  margin-bottom: 60px;
+}
+.download_add_icon {
+  cursor: pointer;
+}
+.guide_content_7 {
+  padding-bottom: 0;
+}
+.guide_content_7 .guide_content_item_box_center {
+  align-items: center;
+  margin-bottom: 0;
+}
+.guide_content_7 h2 {
+  margin: 0;
+}
+.guide_content_7 .guide_content_item_line {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.guide_content_7 .guide_content_item_line:last-child {
+  margin-bottom: 0;
+}
+
+.guide_content_nav_list_item {
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  border-left: 6px solid transparent;
+}
+.active_nav_guide {
+  border-left: 6px solid rgb(47, 87, 191);
+}
+.active_nav_guide p {
+  color: rgb(47, 87, 191);
+}
+
+.xyz_grid {
+  background: radial-gradient(
+      75% 72% at 50% 50%,
+      rgba(73, 73, 75, 0),
+      rgba(0, 8, 30, 0.3) 80.9%
+    ),
+    linear-gradient(135deg, rgba(40, 40, 40, 0.4) 0%, rgba(0, 8, 30, 0.4) 100%),
+    url(../../assets/images/xyz.png);
+  background-position: center;
+  background-size: cover;
+  height: 650px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.xyz_grid h2 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.xyz_grid_text {
+  /* PC & Tablet/H4/Light */
+  color: rgba(255, 255, 255, 0.778);
+  font-family: FuturaCyrillicLight;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: center;
+}

@@ -41,7 +41,7 @@ function Footer() {
                 <NavLink to="/tutorials">
                   <p>Tutorials</p>
                 </NavLink>
-                <NavLink to="">
+                <NavLink to="/guide">
                   <p>Guide</p>
                 </NavLink>
                 <NavLink to="">
