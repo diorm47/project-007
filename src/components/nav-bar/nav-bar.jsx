@@ -14,7 +14,7 @@ function NavBar() {
         </NavLink>
         <div className="nav_logo_place"></div>
         <div className="nav_menu">
-          <NavLink to="">
+          <NavLink to="/full-library">
             <p>Full library</p>
           </NavLink>
           <NavLink to="/how-it-works">

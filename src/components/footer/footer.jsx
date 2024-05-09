@@ -29,7 +29,7 @@ function Footer() {
             <div className="footer_menu_item">
               <h3>Menu</h3>
               <div className="footer_menu_list">
-                <NavLink to="">
+                <NavLink to="/full-library">
                   <p>Full library</p>
                 </NavLink>
                 <NavLink to="/how-it-works">

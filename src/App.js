@@ -14,6 +14,7 @@ import Guide from "./pages/guide/guide";
 import Faq from "./pages/faq/faq";
 import MagneticGrid from "./pages/magnetic-grid/magnetic-grid";
 import NotFound from "./pages/not-found/not-found";
+import FullLibrary from "./pages/full-library/full-library";
 
 function App() {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/reset" element={<Reset />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/full-library" element={<FullLibrary />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
           <Route path="/tutorials" element={<Tutorials />} />

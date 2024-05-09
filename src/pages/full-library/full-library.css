@@ -1,0 +1,128 @@
+.fl_img_block {
+  padding: 150px 0;
+  background: linear-gradient(
+      135deg,
+      rgba(73, 73, 75, 0.75) 0%,
+      rgba(0, 8, 30, 0.75) 100%
+    ),
+    url(../../assets/images/full-library-bg.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.fl_img_block p {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.full_library_block {
+  padding: 80px 0;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fcfcfc ;
+}
+.full_library_filter {
+  box-sizing: border-box;
+  border: 1px solid rgb(217, 217, 217);
+  border-radius: 10px;
+
+  max-width: 305px;
+  width: 100%;
+}
+
+.full_library_filter_title {
+  padding: 20px;
+  background: #eaeef9;
+}
+.full_library_filter_title h2 {
+  /* PC & Tablet/H3/Medium */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicMedium;
+  font-size: 32px;
+  font-weight: 450;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.full_library_filter_search {
+  position: relative;
+}
+.full_library_filter_search input {
+  height: 60px;
+  width: 100%;
+  /* PC & Tablet/H6/Medium */
+  color: #000;
+  font-family: FuturaCyrillicMedium;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  text-indent: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.full_library_filter_search input::placeholder {
+  /* PC & Tablet/H6/Medium */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicMedium;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.full_library_filter_search svg {
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+}
+.full_library_filter_search svg * {
+  fill: #000;
+}
+.filter_apply_btn {
+  padding: 20px;
+}
+.filter_apply_btn .main_btn_temp {
+  width: 100%;
+}
+.library_items {
+  max-width: 955px;
+  width: 100%;
+}
+.library_items_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px 0;
+}
+
+.library_items_tops_filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.free_assets_filter {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.free_assets_filter p {
+  /* PC & Tablet/H5/Medium */
+  color: rgb(56, 56, 56);
+  font-family: FuturaCyrillicMedium;
+  font-size: 20px;
+  font-weight: 450;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+}

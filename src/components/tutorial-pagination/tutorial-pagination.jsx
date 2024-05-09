@@ -4,8 +4,8 @@ import "./tutorial-pagination.css";
 import { ReactComponent as Left } from "../../assets/icons/pagination-left.svg";
 import { ReactComponent as Right } from "../../assets/icons/pagination-right.svg";
 
-function TutorialPagination({ items, setData, currentPage, setCurrentPage }) {
-  const itemsPerPage = 6;
+function TutorialPagination({ items, setData, currentPage, setCurrentPage, itemsPerPage = 6 }) {
+
 
   useEffect(() => {
     const currentItems = items.slice(
