@@ -41,8 +41,6 @@ function Guide() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-
-      // Проверяем, какой блок контента в данный момент находится в видимой области
       Object.keys(contentRefs).forEach((section) => {
         const ref = contentRefs[section];
         if (ref.current) {

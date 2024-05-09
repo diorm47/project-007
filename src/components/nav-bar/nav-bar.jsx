@@ -32,7 +32,7 @@ function NavBar() {
           <NavLink to="">
             <p>Magnetic grid</p>
           </NavLink>
-          <NavLink to="">
+          <NavLink to="/faq">
             <p>FAQ</p>
           </NavLink>
         </div>
