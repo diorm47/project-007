@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./profile.css";
 import { ReactComponent as Settings } from "../../assets/icons/settings.svg";
 import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
 import avatar from "../../assets/icons/default-avatar.jpg";
 import { NavLink } from "react-router-dom";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import { allData } from "../full-library/data";
 
 import { ReactComponent as Facebook } from "../../assets/icons/contacts/facebook.svg";
 import { ReactComponent as Vimeo } from "../../assets/icons/contacts/vimeo.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/contacts/instagram.svg";
 import { ReactComponent as Linkedin } from "../../assets/icons/contacts/linkedin.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/contacts/youtube.svg";
+import { ReactComponent as Quote } from "../../assets/icons/quote.svg";
+import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
+import LibraryCard from "../../components/library-card/library-card";
 
 function Profile() {
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
   return (
-    <div className="profile_page">
+    <>
       <div className="profile_page_header">
         <div className="profile_page_header_content container">
           <div className="profile_page_header_content_top_actions">
@@ -82,7 +91,54 @@ function Profile() {
           </div>
         </div>
       </div>
-    </div>
+      <div className="profile_assets container">
+        <Tabs>
+          <TabList>
+            <Tab>Assets</Tab>
+            <Tab>My purchases</Tab>
+          </TabList>
+
+          <TabPanel>
+            <div className="profile_assets_wrapper">
+              <TutorialPagination
+                items={allData}
+                setData={setData}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                itemsPerPage={24}
+              />
+              <div className="profile_assets_list">
+                {data.map((item, index) => (
+                  <LibraryCard key={index} item={item} />
+                ))}
+              </div>
+              <TutorialPagination
+                items={allData}
+                setData={setData}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                itemsPerPage={15}
+              />
+            </div>
+          </TabPanel>
+        </Tabs>
+      </div>
+      <div className="about_author">
+        <Quote />
+        <div className="about_author_text">
+          <h3>About author</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Habitant quam eget mollis
+            dui justo duis euismod sit quis. Velit ullamcorper arcu sit
+            pellentesque dictum morbi leo cursus tortor. Facilisi sem neque
+            convallis ultricies ullamcorper metus. Senectus quam interdum dictum
+            consectetur vestibulum.Lorem ipsum dolor sit amet consectetur.
+            Habitant quam eget mollis dui justo duis euismod sit quis. Velit
+            ullamcorper arcu sit pellentesque dictum morbi leo cursus tortor.
+          </p>
+        </div>
+      </div>
+    </>
   );
 }
 

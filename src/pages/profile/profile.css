@@ -135,3 +135,60 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
 }
+
+.profile_assets {
+  padding: 80px 0;
+}
+.profile_assets_wrapper {
+  margin-top: 40px;
+}
+.profile_assets .react-tabs__tab--selected {
+  text-decoration-line: underline;
+}
+.profile_assets_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.about_author {
+  background: linear-gradient(
+    135deg,
+    rgba(40, 40, 40, 0.85) 0%,
+    rgba(0, 8, 30, 0.85) 100%
+  );
+  padding: 80px 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.about_author_text {
+  width: 100%;
+  max-width: 600px;
+}
+.about_author_text h3 {
+  border-bottom: 2px solid rgb(89, 92, 99);
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicMedium;
+  font-size: 32px;
+  font-weight: 450;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.about_author_text p {
+  /* PC & Tablet/H5/Light */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
