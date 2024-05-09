@@ -165,6 +165,7 @@
       rgba(0, 8, 30, 0.75) 100%
     ),
     url(../../assets/images/home-moto-bg.jpg);
+    background-size: cover;
 }
 
 .home_moto h1 {

@@ -29,7 +29,7 @@ function NavBar() {
           <NavLink to="/guide">
             <p>Guide</p>
           </NavLink>
-          <NavLink to="">
+          <NavLink to="/magnetic-grid">
             <p>Magnetic grid</p>
           </NavLink>
           <NavLink to="/faq">

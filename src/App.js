@@ -12,6 +12,7 @@ import AffiliateProgram from "./pages/affiliate-program/affiliate-program";
 import Tutorials from "./pages/tutorials/tutorials";
 import Guide from "./pages/guide/guide";
 import Faq from "./pages/faq/faq";
+import MagneticGrid from "./pages/magnetic-grid/magnetic-grid";
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,8 @@ function App() {
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/guide" element={<Guide />} />
+          <Route path="/magnetic-grid" element={<MagneticGrid />} />
+
           <Route path="/faq" element={<Faq />} />
 
         </Routes>
