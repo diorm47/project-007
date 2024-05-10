@@ -7,6 +7,12 @@ import img2 from "../../assets/images/how-it-works/2.png";
 import img3 from "../../assets/images/how-it-works/3.png";
 import img4 from "../../assets/images/how-it-works/4.png";
 function HowItWorks() {
+  React.useEffect(() => {
+    document.title = `How it works | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   return (
     <>
       <div className="header_template container">

@@ -18,6 +18,12 @@ import TutorialPagination from "../../components/tutorial-pagination/tutorial-pa
 import LibraryCard from "../../components/library-card/library-card";
 
 function Profile() {
+  React.useEffect(() => {
+    document.title = `Profile Greg | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 

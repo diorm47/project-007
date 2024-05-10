@@ -8,6 +8,12 @@ import ContributorCard from "../../components/contributor-card/contributor-card"
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
 
 function TopContributors() {
+  React.useEffect(() => {
+    document.title = `Top contributors | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 

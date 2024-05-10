@@ -6,6 +6,12 @@ import { ReactComponent as Icon } from "../../assets/icons/not-found.svg";
 import { ReactComponent as Home } from "../../assets/icons/home.svg";
 
 function NotFound() {
+  React.useEffect(() => {
+    document.title = `Page not found | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   return (
     <div className="header_template container">
       <div className="navigation_links">

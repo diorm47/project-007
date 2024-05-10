@@ -8,6 +8,12 @@ import tutorial3 from "../../assets/images/tutorial-3.png";
 import TutorialCard from "../../components/tutorial-card/tutoril-card";
 import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
 function Tutorials() {
+  React.useEffect(() => {
+    document.title = `Tutorials | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const AllData = [
     {
       title: "Multi-Camera Geometry Tracking",

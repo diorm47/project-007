@@ -14,6 +14,12 @@ import contributor from "../../assets/images/contributor.png";
 
 
 function FullLibrary() {
+  React.useEffect(() => {
+    document.title = `Full library | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 

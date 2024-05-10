@@ -5,6 +5,12 @@ import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
 import { ReactComponent as Save } from "../../assets/icons/save-icon.svg";
 
 function Faq() {
+  React.useEffect(() => {
+    document.title = `FAQ | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const [activeNavItem, setActiveNavItem] = useState(null);
   const contentRefs = {
     techRef: useRef(null),

@@ -8,6 +8,12 @@ import { ReactComponent as ContributionIcon } from "../../assets/icons/contribut
 import contributor from "../../assets/images/contributor.png";
 
 function AffiliateProgram() {
+  React.useEffect(() => {
+    document.title = `Affiliate program | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   return (
     <>
       <div className="header_template container">

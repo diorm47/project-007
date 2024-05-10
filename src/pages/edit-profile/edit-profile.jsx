@@ -13,6 +13,9 @@ import { ReactComponent as Close } from "../../assets/icons/modal-exit.svg";
 import { ReactComponent as PasswordHide } from "../../assets/icons/password-eye.svg";
 import { ReactComponent as PasswordHidden } from "../../assets/icons/hidden-password.svg";
 function EditProfile() {
+  React.useEffect(() => {
+    document.title = `Edit Profile | Matchmove machine`;
+  }, []);
   const [hidden1, setHide1] = useState(false);
   const [hidden2, setHide2] = useState(false);
 

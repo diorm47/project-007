@@ -16,6 +16,12 @@ import ReviewsCarousel from "../../components/reviews-carousel/rev-carousel";
 import { NavLink } from "react-router-dom";
 
 function Home() {
+  React.useEffect(() => {
+    document.title = `Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -57,10 +63,12 @@ function Home() {
             </div>
           </div>
           <div className="home_header_content_see_more">
-            <div className="home_header_content_see_more_btn">
-              <p>See full library</p>
-              <More />
-            </div>
+            <NavLink to="/full-library">
+              <div className="home_header_content_see_more_btn">
+                <p>See full library</p>
+                <More />
+              </div>
+            </NavLink>
             <ArrowDown />
           </div>
         </div>

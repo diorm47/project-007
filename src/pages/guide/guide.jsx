@@ -24,6 +24,12 @@ import guide18 from "../../assets/images/guide/guide18.png";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
 
 function Guide() {
+  React.useEffect(() => {
+    document.title = `Guide | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   const [activeNavItem, setActiveNavItem] = useState(null);
   const contentRefs = {
     preparationRef: useRef(null),

@@ -21,6 +21,7 @@ import { ReactComponent as Icon8 } from "../../assets/icons/specification-icons/
 import { NavLink } from "react-router-dom";
 
 function SampleNextArrow(props) {
+  
   const { onClick } = props;
   return (
     <div
@@ -45,6 +46,12 @@ function SamplePrevArrow(props) {
 }
 
 function MagneticGrid() {
+  React.useEffect(() => {
+    document.title = `Magnetic grid | Matchmove machine`;
+  }, []);
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
   var settings = {
     dots: true,
     infinite: true,
