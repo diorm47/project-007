@@ -1,3 +1,55 @@
+.home_tutorial_card_title h4 {
+  /* PC & Tablet/H3/Medium */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicMedium;
+  font-size: 32px;
+  font-weight: 450;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.home_tutorial_card_btn {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 67px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Accent/accent-color */
+  background: rgb(47, 87, 191);
+}
+.home_tutorial_card_title {
+  margin: 20px 0;
+}
+
+.home_tutorial_card_desc p {
+  /* PC & Tablet/H5/Light */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicLight;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.home_tutorial_cards,
+.home_tutorial_card_title {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.home_tutorial_card_title h4 {
+  /* PC & Tablet/H3/Medium */
+  color: rgb(255, 255, 255);
+  font-family: FuturaCyrillicMedium;
+  font-size: 32px;
+  font-weight: 450;
+  line-height: 41px;
+  letter-spacing: 0%;
+  text-align: left;
+}
 .tutorial_card h4 {
   /* PC & Tablet/H3/Medium */
   color: rgb(40, 40, 40);

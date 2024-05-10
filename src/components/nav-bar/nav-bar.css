@@ -1,7 +1,7 @@
 nav {
   position: fixed;
   width: 100%;
- z-index: 111;
+  z-index: 111;
   background: rgb(40, 40, 40);
   padding: 15px 0;
   top: 0;
@@ -19,9 +19,9 @@ nav {
   position: relative;
 }
 .nav_logo {
-    position: absolute;
-    top: -15px;
-    left: 0;
+  position: absolute;
+  top: -15px;
+  left: 0;
 }
 .nav_logo_place {
   width: 110px;
@@ -34,12 +34,16 @@ nav {
 .nav_menu p {
   /* PC & Tablet/H6/Bold */
   color: rgb(255, 255, 255);
- font-family: FuturaCyrillicBold;
+  font-family: FuturaCyrillicBold;
   font-size: 18px;
   font-weight: 700;
   line-height: 23px;
   letter-spacing: 0%;
   text-align: left;
+}
+.nav_menu .active p {
+  opacity: 0.7;
+
 }
 
 .nav_right {

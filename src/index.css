@@ -25,3 +25,61 @@ button, select {
   width: 100%;
   margin: 0 auto;
 }
+
+.header_template {
+  padding-top: 100px;
+}
+.navigation_links {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 40px;
+}
+.navigation_links a {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: rgb(47, 87, 191);
+  font-family: FuturaCyrillicMedium;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-decoration-line: underline;
+}
+.navigation_links p {
+  /* PC & Tablet/H6/Medium */
+  color: rgb(179, 179, 179);
+  font-family: FuturaCyrillicMedium;
+
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.header_template_title h1 {
+  /* PC & Tablet/H2/Bold */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicBold;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.header_template_text p {
+  /* PC & Tablet/H4/Light */
+  color: rgb(105, 105, 105);
+  font-family: FuturaCyrillicLight;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 30px;
+}

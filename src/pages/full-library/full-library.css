@@ -27,13 +27,13 @@
   align-items: start;
   justify-content: space-between;
   gap: 20px;
-  background: #fcfcfc ;
+
 }
 .full_library_filter {
   box-sizing: border-box;
   border: 1px solid rgb(217, 217, 217);
   border-radius: 10px;
-
+  background: #fcfcfc ;
   max-width: 305px;
   width: 100%;
 }
