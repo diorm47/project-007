@@ -1,0 +1,23 @@
+.scroll-to-top {
+  box-sizing: border-box;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 67px;
+  height: 60px;
+  cursor: pointer;
+  background: #2f3442;
+  position: fixed;
+  right: 0;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 110;
+  transform: translateY(400%);
+  transition: all 0.4s ease;
+}
+
+.scroll-to-top_visible {
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}

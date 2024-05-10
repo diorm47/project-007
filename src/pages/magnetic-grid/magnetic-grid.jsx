@@ -18,6 +18,7 @@ import { ReactComponent as Icon5 } from "../../assets/icons/specification-icons/
 import { ReactComponent as Icon6 } from "../../assets/icons/specification-icons/icon6.svg";
 import { ReactComponent as Icon7 } from "../../assets/icons/specification-icons/icon7.svg";
 import { ReactComponent as Icon8 } from "../../assets/icons/specification-icons/icon8.svg";
+import { NavLink } from "react-router-dom";
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -218,10 +219,12 @@ function MagneticGrid() {
             Grids Database with bonus access to the library. Let's build an
             incredible library of distortion grids!
           </p>
-          <div className="main_btn_temp see_more_btn_temp">
-            <p>Learn how</p>
-            <ArrowRight />
-          </div>
+          <NavLink to="/affiliate-program">
+            <div className="main_btn_temp see_more_btn_temp">
+              <p>Learn how</p>
+              <ArrowRight />
+            </div>
+          </NavLink>
         </div>
       </section>
     </>

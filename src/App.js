@@ -15,6 +15,8 @@ import Faq from "./pages/faq/faq";
 import MagneticGrid from "./pages/magnetic-grid/magnetic-grid";
 import NotFound from "./pages/not-found/not-found";
 import FullLibrary from "./pages/full-library/full-library";
+import ToTop from "./components/to-top/to-top";
+import TopContributors from "./pages/top-contributors/top-contributors";
 
 function App() {
   const location = useLocation();
@@ -44,10 +46,12 @@ function App() {
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/magnetic-grid" element={<MagneticGrid />} />
+          <Route path="/top-contributors" element={<TopContributors />} />
 
           <Route path="/faq" element={<Faq />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ToTop />
       </div>
       {location.pathname !== "/login" &&
       location.pathname !== "/auth" &&

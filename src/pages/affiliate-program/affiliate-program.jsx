@@ -78,10 +78,12 @@ function AffiliateProgram() {
       <section className="top_contributors container">
         <div className="top_contributors_title">
           <h2>Top contributors</h2>
-          <div className="main_btn_temp">
-            <p>See all</p>
-            <ArrowRight />
-          </div>
+          <NavLink to="/top-contributors">
+            <div className="main_btn_temp">
+              <p>See all</p>
+              <ArrowRight />
+            </div>
+          </NavLink>
         </div>
         <div className="top_contributors_list">
           <div className="top_contributor">
@@ -249,7 +251,6 @@ function AffiliateProgram() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </>

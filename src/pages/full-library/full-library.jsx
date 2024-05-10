@@ -94,19 +94,23 @@ function FullLibrary() {
             Grids Database with bonus access to the library. Let's build an
             incredible library of distortion grids!
           </p>
-          <div className="main_btn_temp see_more_btn_temp">
-            <p>Learn how</p>
-            <ArrowRight />
-          </div>
+          <NavLink to="/affiliate-program">
+            <div className="main_btn_temp see_more_btn_temp">
+              <p>Learn how</p>
+              <ArrowRight />
+            </div>
+          </NavLink>
         </div>
       </section>
       <section className="top_contributors container">
         <div className="top_contributors_title">
           <h2>Top contributors</h2>
-          <div className="main_btn_temp">
-            <p>See all</p>
-            <ArrowRight />
-          </div>
+          <NavLink to="/top-contributors">
+            <div className="main_btn_temp">
+              <p>See all</p>
+              <ArrowRight />
+            </div>
+          </NavLink>
         </div>
         <div className="top_contributors_list">
           <div className="top_contributor">

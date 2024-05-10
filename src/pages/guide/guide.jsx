@@ -23,8 +23,6 @@ import guide17 from "../../assets/images/guide/guide17.png";
 import guide18 from "../../assets/images/guide/guide18.png";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
 
-
-
 function Guide() {
   const [activeNavItem, setActiveNavItem] = useState(null);
   const contentRefs = {
@@ -631,17 +629,17 @@ function Guide() {
           </div>
         </div>
       </div>
-      <div className="xyz_grid"  ref={contentRefs.xyzRef}>
+      <div className="xyz_grid" ref={contentRefs.xyzRef}>
         <h2>XYZ Magnetic Grid</h2>
         <p className="xyz_grid_text">
-          Let yourself fulfill your creative vision with XYZ Magnetic Grid, <br />  a
-          tool that makes shooting grids more convenient, efficient and
+          Let yourself fulfill your creative vision with XYZ Magnetic Grid,{" "}
+          <br /> a tool that makes shooting grids more convenient, efficient and
           exciting!
         </p>
         <div className="main_btn_temp see_more_btn_temp">
-            <p>See more</p>
-            <ArrowRight />
-          </div>
+          <p>See more</p>
+          <ArrowRight />
+        </div>
       </div>
     </>
   );

@@ -85,7 +85,7 @@ function Home() {
               </p>
               <p>
                 Save your time and your clients’ budget, and be sure{" "}
-                <a href="#">of quality!</a>
+                <NavLink to="/how-it-works"> of quality!</NavLink>
               </p>
             </div>
             <div className="home_about_wrapper_right">
@@ -101,7 +101,7 @@ function Home() {
         </h1>
         <p>
           We tested the hypothesis in practice and{" "}
-          <a href="#">share the results.</a>
+          <NavLink to="/how-it-works"> share the results.</NavLink>
         </p>
       </section>
       <section className="home_about how_it_works">
@@ -110,8 +110,9 @@ function Home() {
             <div className="home_about_wrapper_left">
               <h2>How it works</h2>
               <p>
-                We film distortion grids following <a href="#">the guide</a> and
-                then we create presets and STMaps.
+                We film distortion grids following{" "}
+                <NavLink to="/how-it-works">the guide</NavLink> and then we
+                create presets and STMaps.
               </p>
               <p>
                 If you spot this icon on an asset, it signifies that we
@@ -205,10 +206,12 @@ function Home() {
             </div>
           </div>
 
-          <div className="home_header_content_see_more_btn browse_all">
-            <p>Browse all</p>
-            <More />
-          </div>
+          <NavLink to="/tutorials">
+            <div className="home_header_content_see_more_btn browse_all">
+              <p>Browse all</p>
+              <More />
+            </div>
+          </NavLink>
         </div>
       </section>
       <section className="reviews">
@@ -227,10 +230,12 @@ function Home() {
             Grids Database with bonus access to the library. Let's build an
             incredible library of distortion grids!
           </p>
-          <div className="main_btn_temp see_more_btn_temp">
-            <p>Learn how</p>
-            <ArrowRight />
-          </div>
+          <NavLink to="/affiliate-program">
+            <div className="main_btn_temp see_more_btn_temp">
+              <p>Learn how</p>
+              <ArrowRight />
+            </div>
+          </NavLink>
         </div>
       </section>
     </>

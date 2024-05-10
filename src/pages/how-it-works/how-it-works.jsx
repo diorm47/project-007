@@ -41,10 +41,7 @@ function HowItWorks() {
           “Each lens is unique - it is impossible to create <br />a universal
           preset!”
         </h1>
-        <p>
-          We tested the hypothesis in practice and{" "}
-          <a href="#">share the results.</a>
-        </p>
+        <p>We tested the hypothesis in practice and share the results.</p>
       </section>
       <div className="description_text container">
         <h2>Distortion grid shooting technique</h2>
