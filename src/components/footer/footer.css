@@ -42,6 +42,10 @@ footer {
   letter-spacing: 0%;
   margin-bottom: 10px;
   text-align: left;
+  
+}
+.footer_menu_list a:hover p {
+  text-decoration: underline;
 }
 
 .footer_menu_line {

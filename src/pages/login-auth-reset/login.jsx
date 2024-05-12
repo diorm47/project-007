@@ -42,10 +42,12 @@ function Login() {
             </NavLink>
           </div>
           <div className="login_btns">
-            <button className="main_btn_temp">
-              <p>Sign In</p>
-              <ArrowRight />
-            </button>
+            <NavLink to="/profile">
+              <button className="main_btn_temp">
+                <p>Sign In</p>
+                <ArrowRight />
+              </button>
+            </NavLink>
             <NavLink to="/auth">
               <button className="main_btn_temp_transparent">
                 <p>Register</p>

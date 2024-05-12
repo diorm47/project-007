@@ -1,0 +1,101 @@
+.share_page {
+  padding: 80px 0;
+}
+.share_page h2 {
+  /* PC & Tablet/H2/Medium */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicMedium;
+  font-size: 48px;
+  font-weight: 450;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.share_page_wrapper {
+  display: flex;
+  align-items: start;
+  gap: 30px;
+}
+.share_page_content_title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.share_page_content_title p {
+  /* PC & Tablet/H4/Medium */
+  color: rgb(63, 63, 63);
+  font-family: FuturaCyrillicMedium;
+  font-size: 24px;
+  font-weight: 450;
+  line-height: 31px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.share_page_content {
+  width: 80%;
+}
+
+.share_page_content_link input {
+  box-sizing: border-box;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 5px;
+  width: 100%;
+  height: 58px;
+  background: rgb(179, 179, 179);
+  text-indent: 20px;
+  /* PC & Tablet/H6/Light */
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicLight;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.share_page_content_link {
+  position: relative;
+  margin-bottom: 40px;
+}
+.share_page_content_link svg {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 13px;
+}
+.share_social_item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.share_social_item_icon {
+  width: 81.7px;
+  height: 81.7px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(80, 80, 80);
+}
+
+.share_social_item p {
+  color: rgb(40, 40, 40);
+  font-family: FuturaCyrillicLight;
+  font-size: 17.82px;
+  font-weight: 300;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.share_socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

@@ -14,8 +14,10 @@ import { ReactComponent as Instagram } from "../../assets/icons/contacts/instagr
 import { ReactComponent as Linkedin } from "../../assets/icons/contacts/linkedin.svg";
 import { ReactComponent as Youtube } from "../../assets/icons/contacts/youtube.svg";
 import { ReactComponent as Quote } from "../../assets/icons/quote.svg";
+
 import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
 import LibraryCard from "../../components/library-card/library-card";
+import SharePage from "../../components/share-page/share-page";
 
 function Profile() {
   React.useEffect(() => {
@@ -144,6 +146,7 @@ function Profile() {
           </p>
         </div>
       </div>
+      <SharePage />
     </>
   );
 }
