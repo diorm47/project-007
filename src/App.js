@@ -18,6 +18,7 @@ import MagneticGrid from "./pages/magnetic-grid/magnetic-grid";
 import Tutorials from "./pages/tutorials/tutorials";
 import FullLibrary from "./pages/full-library/full-library";
 import TopContributors from "./pages/top-contributors/top-contributors";
+import TutorialPage from "./pages/tutorial-page/tutorial-page";
 
 function App() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function App() {
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
           <Route path="/tutorials" element={<Tutorials />} />
+          <Route path="/tutorial" element={<TutorialPage />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/magnetic-grid" element={<MagneticGrid />} />
           <Route path="/top-contributors" element={<TopContributors />} />

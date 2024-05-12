@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./home.css";
 import { ReactComponent as Browse } from "../../assets/icons/browse.svg";
 import { ReactComponent as More } from "../../assets/icons/more.svg";
@@ -31,6 +31,26 @@ function Home() {
       color: state.isSelected ? "white" : provided.color,
     }),
   };
+  const blockRef = useRef(null);
+
+  const smoothScrollTo = (element) => {
+    const targetPosition = element.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 500;
+    let start = null;
+
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      window.scrollTo(0, startPosition + distance * (progress / duration));
+      if (progress < duration) window.requestAnimationFrame(step);
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const scrollToBlock = () => smoothScrollTo(blockRef.current);
 
   return (
     <>
@@ -69,11 +89,11 @@ function Home() {
                 <More />
               </div>
             </NavLink>
-            <ArrowDown />
+            <ArrowDown onClick={scrollToBlock}/>
           </div>
         </div>
       </header>
-      <section className="home_about">
+      <section className="home_about" ref={blockRef}>
         <div className="home_about_wrapper">
           <div className="home_about_wrapper_content container">
             <div className="home_about_wrapper_left">
