@@ -1,10 +1,7 @@
 nav {
-  position: fixed;
   width: 100%;
-  z-index: 111;
   background: rgb(40, 40, 40);
   padding: 15px 0;
-  top: 0;
 }
 .nav_overlay {
   position: relative;
@@ -45,7 +42,6 @@ nav {
 .nav_menu a:hover p {
   transition: all 0.4s ease;
   opacity: 0.7;
-
 }
 .nav_menu .active p {
   opacity: 0.7;

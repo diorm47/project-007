@@ -1,11 +1,12 @@
 import React from "react";
-import "./nav-bar.css";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { ReactComponent as Cart } from "../../assets/icons/cart.svg";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as ProfileIcon } from "../../assets/icons/profile-icon.svg";
-import { NavLink, useLocation } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import "./nav-bar.css";
+import { useSelector } from "react-redux";
 
 function NavBar() {
+  const userData = useSelector((state) => state.user);
   return (
     <div className="nav_overlay">
       <nav>
@@ -38,11 +39,6 @@ function NavBar() {
             </NavLink>
           </div>
           <div className="nav_right">
-            <NavLink to="">
-              <div className="nav_cart">
-                <Cart />
-              </div>
-            </NavLink>
             <NavLink to="/login">
               <div className="nav_login_btn main_btn_temp">
                 <p>Sign In</p>

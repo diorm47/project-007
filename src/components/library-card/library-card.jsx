@@ -1,35 +1,27 @@
 import React from "react";
-import "./library-card.css";
-import { ReactComponent as Prem } from "../../assets/icons/prem.svg";
-import avatar from "../../assets/images/contributor.png";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
+import avatar from "../../assets/images/contributor.png";
+import "./library-card.css";
 
 function LibraryCard({ item }) {
+  console.log(item);
   return (
     <div className="library_item_card">
       <div className="library_item_card_img">
         <div className="library_item_card_author">
-          {item.free ? (
-            <>
-              <p>{item.user}</p>
-              <img src={avatar} alt="" />
-            </>
-          ) : (
-            <Prem />
-          )}
+          <>
+            <p>{item.user.name}</p>
+            <img src={avatar} alt="" />
+          </>
         </div>
         <div className="library_item_model">
-          <p>{item.model}</p>
+          <p>{item.lens_model}</p>
         </div>
       </div>
       <div
-        className={
-          item.free
-            ? "library_item_card_price"
-            : "library_item_card_price library_item_pricely"
-        }
+        className="library_item_card_price library_item_pricely"
       >
-        {item.free ? <p>FREE</p> : <p>{item.price}$</p>}
+        <p>Download</p>
 
         <ArrowRight />
       </div>

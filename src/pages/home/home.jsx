@@ -52,6 +52,265 @@ function Home() {
 
   const scrollToBlock = () => smoothScrollTo(blockRef.current);
 
+  const cameraOptions = [
+    {
+      value: "smartphone",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Smartphone</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "dslr",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>DSLR</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "digital_camera",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Digital camera</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const cameraManufacter = [
+    {
+      value: "canon",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Canon</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "nikon",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Nikon</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "sony",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Sony</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "tamron",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Tamron</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "panasonic",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Panasonic</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "sigma",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Sigma</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const lensModel = [
+    {
+      value: "EF 50mm f/1.8 STM",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>EF 50mm f/1.8 STM</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "AF-S DX NIKKOR 35mm f/1.8G",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>AF-S DX NIKKOR 35mm f/1.8G</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "Digital Bolex D16",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Digital Bolex D16</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "EOS 1D C",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>EOS 1D C</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "Craft Camera HD",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Craft Camera HD</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "UMC-S3C",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>UMC-S3C</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "EOS C700",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>EOS C700</p>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      value: "EF / 100-200mm",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>EF / 100-200mm</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "ARRI ALEXA 65",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>ARRI ALEXA 65</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "Craft Camera FHD",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Craft Camera FHD</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "EF 25mm f/1.8 STM",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>EF 25mm f/1.8 STM</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "Craft Camera FHD",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Craft Camera FHD</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "Digital Bolex D18",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Digital Bolex D18</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "AF-S DC NIKKOR 30mm f/1.8G",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>AF-S DC NIKKOR 30mm f/1.8G</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "Digital Bolex D20",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Digital Bolex D20</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "EOS C770",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>EOS C770</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
   return (
     <>
       <header className="home_header">
@@ -69,13 +328,21 @@ function Home() {
           </div>
           <div className="header_form">
             <div className="header_form_select">
-              <Select placeholder="Camera" styles={customStyles} />
+              <Select
+                placeholder="Camera"
+                styles={customStyles}
+                options={cameraOptions}
+              />
             </div>
             <div className="header_form_select">
-              <Select placeholder="Lens manufacturer" styles={customStyles} />
+              <Select
+                placeholder="Lens manufacturer"
+                styles={customStyles}
+                options={cameraManufacter}
+              />
             </div>
             <div className="header_form_select">
-              <Select placeholder="Lens model" styles={customStyles} />
+              <Select placeholder="Lens model" styles={customStyles} options={lensModel} />
             </div>
             <div className="main_btn_temp ">
               <p>Browse</p>
@@ -89,7 +356,7 @@ function Home() {
                 <More />
               </div>
             </NavLink>
-            <ArrowDown onClick={scrollToBlock}/>
+            <ArrowDown onClick={scrollToBlock} />
           </div>
         </div>
       </header>

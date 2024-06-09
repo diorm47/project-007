@@ -165,7 +165,7 @@
       rgba(0, 8, 30, 0.75) 100%
     ),
     url(../../assets/images/home-moto-bg.jpg);
-    background-size: cover;
+  background-size: cover;
 }
 
 .home_moto h1 {
@@ -337,8 +337,6 @@
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 0%;
-
-
 }
 
 .join_community_wrapper p {
@@ -352,5 +350,14 @@
   text-align: center;
   max-width: 547px;
   width: 100%;
-  
+}
+
+.drop_api_item_name p {
+  color: #000;
+  font-size: 18px;
+  font-family: FuturaCyrillicMedium;
+  font-weight: 450;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: left;
 }

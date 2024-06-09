@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./full-library.css";
 import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
 import { NavLink } from "react-router-dom";
@@ -11,7 +11,9 @@ import Switch from "../../components/switch/switch";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
 import { ReactComponent as ContributionIcon } from "../../assets/icons/contribution-icon.svg";
 import contributor from "../../assets/images/contributor.png";
-
+import { mainApi } from "../../components/utils/main-api";
+import { useDispatch, useSelector } from "react-redux";
+import { getGridsAction } from "../../redux/grids-reducer";
 
 function FullLibrary() {
   React.useEffect(() => {
@@ -20,9 +22,20 @@ function FullLibrary() {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
-  const [data, setData] = useState([]);
+  const gridsData = useSelector((state) => state.grids);
+  const dispatch = useDispatch();
+  const [data, setData] = useState(gridsData || []);
   const [currentPage, setCurrentPage] = useState(0);
 
+  const getGrids = () => {
+    mainApi.getGridsApi().then((userData) => {
+      dispatch(getGridsAction(userData));
+    });
+  };
+  useEffect(() => {
+    getGrids();
+  }, []);
+  console.log(data);
   return (
     <>
       <div className="header_template container">
@@ -65,31 +78,41 @@ function FullLibrary() {
           </div>
         </div>
         <div className="library_items">
-          <div className="library_items_tops_filter">
-            <TutorialPagination
-              items={allData}
-              setData={setData}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-              itemsPerPage={24}
-            />
-            <div className="free_assets_filter">
-              <p>Free assets</p>
-              <Switch />
+          {data && data.length > 24 ? (
+            <div className="library_items_tops_filter">
+              <TutorialPagination
+                items={allData}
+                setData={setData}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                itemsPerPage={24}
+              />
+              <div className="free_assets_filter">
+                <p>Free assets</p>
+                <Switch />
+              </div>
             </div>
-          </div>
+          ) : (
+            ""
+          )}
           <div className="library_items_list">
-            {data.map((item, index) => (
+            {data?.map((item, index) => (
               <LibraryCard key={index} item={item} />
             ))}
           </div>
-          <TutorialPagination
-            items={allData}
-            setData={setData}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            itemsPerPage={24}
-          />
+          {data && data.length > 24 ? (
+            <div className="library_items_bottom_filter">
+              <TutorialPagination
+                items={allData}
+                setData={setData}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                itemsPerPage={24}
+              />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <section className="join_community">
@@ -284,7 +307,6 @@ function FullLibrary() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </>

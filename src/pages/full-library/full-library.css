@@ -27,15 +27,15 @@
   align-items: start;
   justify-content: space-between;
   gap: 20px;
-
 }
 .full_library_filter {
   box-sizing: border-box;
   border: 1px solid rgb(217, 217, 217);
   border-radius: 10px;
-  background: #fcfcfc ;
+  background: #fcfcfc;
   max-width: 305px;
   width: 100%;
+  overflow: hidden;
 }
 
 .full_library_filter_title {
@@ -103,13 +103,16 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  padding: 20px 0;
 }
 
 .library_items_tops_filter {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
+}
+.library_items_bottom_filter {
+  margin-top: 20px;
 }
 .free_assets_filter {
   display: flex;

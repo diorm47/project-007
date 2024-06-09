@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import NavBar from "./components/nav-bar/nav-bar";
@@ -19,10 +19,33 @@ import Tutorials from "./pages/tutorials/tutorials";
 import FullLibrary from "./pages/full-library/full-library";
 import TopContributors from "./pages/top-contributors/top-contributors";
 import TutorialPage from "./pages/tutorial-page/tutorial-page";
+import { mainApi } from "./components/utils/main-api";
+import { useDispatch } from "react-redux";
+import { loginUserAction } from "./redux/user-reducer";
 
 function App() {
   const location = useLocation();
+  const dispatch = useDispatch();
 
+  const getMe = () => {
+    mainApi
+      .getMe()
+      .then((userData) => {
+        const is_logged = {
+          is_logged: true,
+        };
+        dispatch(loginUserAction(is_logged));
+        dispatch(loginUserAction(userData));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      getMe();
+    }
+  }, [localStorage.getItem("token")]);
   return (
     <div className="pages_wrapper">
       {location.pathname !== "/login" &&
@@ -38,7 +61,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/auth" element={<Auth />} />
+          <Route path="/auth" element={<Auth getMe={getMe} />} />
           <Route path="/reset" element={<Reset />} />
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/profile" element={<Profile />} />

@@ -62,9 +62,7 @@ function Footer() {
                 <NavLink to="">
                   <p>Terms of use</p>
                 </NavLink>{" "}
-                <NavLink to="">
-                  <p>Our studio</p>
-                </NavLink>
+            
               </div>
             </div>
             <div className="footer_menu_line"></div>
