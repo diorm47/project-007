@@ -62,6 +62,14 @@ class MainApi {
       requiresToken: true,
     });
   }
+  async updateUser(userData) {
+    return this._sendRequest({
+      endpoint: `/update`,
+      method: "POST",
+      body: userData,
+      requiresToken: true,
+    });
+  }
   // grids
   async getGridsApi() {
     return this._sendRequest({
@@ -75,6 +83,13 @@ class MainApi {
       method: "POST",
       body: userData,
       requiresToken: true,
+    });
+  }
+  // users
+  async getAllUsers() {
+    return this._sendRequest({
+      endpoint: `/users`,
+      method: "GET",
     });
   }
 }

@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./profile.css";
 import { ReactComponent as Settings } from "../../assets/icons/settings.svg";
 import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
 import avatar from "../../assets/icons/default-avatar.jpg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { allData } from "../full-library/data";
-
+import { mainApi } from "../../components/utils/main-api";
+import { useDispatch, useSelector } from "react-redux";
+import { getGridsAction } from "../../redux/grids-reducer";
 import { ReactComponent as Facebook } from "../../assets/icons/contacts/facebook.svg";
 import { ReactComponent as Vimeo } from "../../assets/icons/contacts/vimeo.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/contacts/instagram.svg";
@@ -26,8 +28,30 @@ function Profile() {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
-  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const userData = useSelector((state) => state.user);
+  const gridsData = useSelector((state) => state.grids);
+  const filteredData = gridsData.filter(
+    (item) => item.user._id === userData._id
+  );
+  const dispatch = useDispatch();
+  const [data, setData] = useState(filteredData || []);
   const [currentPage, setCurrentPage] = useState(0);
+
+  const getGrids = () => {
+    mainApi.getGridsApi().then((grids) => {
+      dispatch(getGridsAction(grids));
+      setData(grids.filter((item) => item.user._id === userData._id));
+    });
+  };
+  useEffect(() => {
+    getGrids();
+  }, []);
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
 
   return (
     <>
@@ -42,36 +66,43 @@ function Profile() {
               </NavLink>
               <div className="profile_username">
                 <p>
-                  #109 / <span>Greg</span>
+                  <span>{userData.name}</span>
                 </p>
               </div>
             </div>
-            <button className="logout_btn">
+            <button className="logout_btn" onClick={logout}>
               <Logout />
             </button>
           </div>
           <div className="profile_page_infs">
             <div className="profile_page_infs_left">
               <div className="profile_page_infs_avatar">
-                <img src={avatar} alt="" />
+                <img
+                  src={
+                    userData.avatarUrl
+                      ? `http://localhost:3001${userData.avatarUrl}`
+                      : avatar
+                  }
+                  alt=""
+                />
               </div>
               <div className="profile_page_infs_left_desc">
                 <div>
                   <h4>Email:</h4>
-                  <NavLink to="">
-                    <p>greg-grids@machine.com</p>
-                  </NavLink>
+                  <a href={`mailto:${userData.email}`}>
+                    <p>{userData.email}</p>
+                  </a>
                 </div>
                 <div>
                   <h4>Website:</h4>
-                  <NavLink to="">
-                    <p>https://machine.com</p>
-                  </NavLink>
+                  <a href={userData.website}>
+                    <p>{userData.website}</p>
+                  </a>
                 </div>
                 <div>
                   <h4>Portfolio:</h4>
-                  <NavLink to="">
-                    <p>https://behance.com/greg-grids</p>
+                  <NavLink to={userData.portfolio}>
+                    <p>{userData.portfolio}</p>
                   </NavLink>
                 </div>
               </div>
@@ -79,21 +110,16 @@ function Profile() {
             <div className="profile_page_infs_right">
               <p>Contacts: </p>
               <div className="profile_page_infs_right_socials">
-                <div className="profile_page_infs_right_social_item">
-                  <Facebook />
-                </div>
-                <div className="profile_page_infs_right_social_item">
-                  <Vimeo />
-                </div>
-                <div className="profile_page_infs_right_social_item">
-                  <Instagram />
-                </div>
-                <div className="profile_page_infs_right_social_item">
-                  <Linkedin />
-                </div>
-                <div className="profile_page_infs_right_social_item">
-                  <Youtube />
-                </div>
+                <a href={userData.facebook  || ''} target="blank">
+                  <div className="profile_page_infs_right_social_item">
+                    <Facebook />
+                  </div>
+                </a>
+                <a href={userData.linkedin || ''} target="blank">
+                  <div className="profile_page_infs_right_social_item">
+                    <Linkedin />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -103,30 +129,47 @@ function Profile() {
         <Tabs>
           <TabList>
             <Tab>Assets</Tab>
-            <Tab>My purchases</Tab>
           </TabList>
 
           <TabPanel>
             <div className="profile_assets_wrapper">
-              <TutorialPagination
-                items={allData}
-                setData={setData}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                itemsPerPage={24}
-              />
-              <div className="profile_assets_list">
-                {data.map((item, index) => (
-                  <LibraryCard key={index} item={item} />
-                ))}
-              </div>
-              <TutorialPagination
-                items={allData}
-                setData={setData}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                itemsPerPage={15}
-              />
+              {data && data.length > 24 ? (
+                <div className="library_items_tops_filter">
+                  <TutorialPagination
+                    items={allData}
+                    setData={setData}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    itemsPerPage={24}
+                  />{" "}
+                </div>
+              ) : (
+                ""
+              )}
+              {data && data.length ? (
+                <div className="profile_assets_list">
+                  {data.map((item, index) => (
+                    <LibraryCard key={index} item={item} />
+                  ))}
+                </div>
+              ) : (
+                <div className="empty_assets">
+                  <p>Empty</p>
+                </div>
+              )}
+              {data && data.length > 24 ? (
+                <div className="library_items_bottom_filter">
+                  <TutorialPagination
+                    items={allData}
+                    setData={setData}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    itemsPerPage={15}
+                  />{" "}
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </TabPanel>
         </Tabs>
@@ -146,7 +189,7 @@ function Profile() {
           </p>
         </div>
       </div>
-      <SharePage />
+      <SharePage userData={userData} />
     </>
   );
 }

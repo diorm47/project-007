@@ -61,9 +61,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/auth" element={<Auth getMe={getMe} />} />
+          <Route path="/auth" element={<Auth  />} />
           <Route path="/reset" element={<Reset />} />
-          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/edit-profile" element={<EditProfile getMe={getMe} />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/full-library" element={<FullLibrary />} />
           <Route path="/how-it-works" element={<HowItWorks />} />

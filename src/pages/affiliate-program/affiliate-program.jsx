@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./affiliate-program.css";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
@@ -6,6 +6,10 @@ import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg
 import { ReactComponent as UploadIcon } from "../../assets/icons/upload-icon.svg";
 import { ReactComponent as ContributionIcon } from "../../assets/icons/contribution-icon.svg";
 import contributor from "../../assets/images/contributor.png";
+import Select from "react-select";
+import Snackbar from "../../components/snackbar/snackbar";
+import { mainApi } from "../../components/utils/main-api";
+import TopContributorsList from "../../components/top-contributos-list/top-contributos-list";
 
 function AffiliateProgram() {
   React.useEffect(() => {
@@ -14,6 +18,157 @@ function AffiliateProgram() {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
+  // snackbar
+  const [visibleSnack, setVisibleSnack] = useState(false);
+  const [snackText, setSnackText] = useState("");
+  const [snackStatus, setSnackStatus] = useState("");
+  const snackOptions = (text, status) => {
+    setVisibleSnack(true);
+    setSnackText(text);
+    setSnackStatus(status);
+    setTimeout(() => {
+      setVisibleSnack(false);
+    }, 2000);
+  };
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isSelected
+        ? "#1111121a"
+        : provided.backgroundColor,
+      color: state.isSelected ? "white" : provided.color,
+    }),
+  };
+  const cameraOptions = [
+    {
+      value: "smartphone",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Smartphone</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "dslr",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>DSLR</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "digital_camera",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Digital camera</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const cameraManufacter = [
+    {
+      value: "canon",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Canon</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "nikon",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Nikon</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "sony",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Sony</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "tamron",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Tamron</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "panasonic",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Panasonic</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      value: "sigma",
+      label: (
+        <div className="drop_api_item">
+          <div className="drop_api_item_name">
+            <p>Sigma</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+  const [lensModel, setLensModel] = useState();
+  const [selectedCamera, setSelectedCamera] = useState(null);
+  const handleSelectCamera = (selectedOption) => {
+    setSelectedCamera(selectedOption);
+  };
+  const [selectedCameraM, setSelectedCameraM] = useState(null);
+  const handleSelectCameraM = (selectedOption) => {
+    setSelectedCameraM(selectedOption);
+  };
+
+  const saveGrid = () => {
+    const gridData = {
+      camera: selectedCamera.value,
+      lens_model: lensModel,
+      camera_manufacturer: selectedCameraM.value,
+    };
+    mainApi
+      .createGridsApi(gridData)
+      .then((res) => {
+        snackOptions("Grid saved successfuly", "success");
+        setLensModel("");
+        setSelectedCamera("");
+        setSelectedCameraM("");
+      })
+      .catch((err) => {
+        console.log("Error object:", err);
+        let errorMessage = "An error occurred";
+        if (err && Array.isArray(err) && err.length > 0) {
+          errorMessage = err[0].msg || err[0].message || "Error";
+        } else if (err && err.message) {
+          errorMessage = err.message;
+        }
+        snackOptions(errorMessage, "error");
+      });
+  };
   return (
     <>
       <div className="header_template container">
@@ -57,13 +212,28 @@ function AffiliateProgram() {
 
         <div className="custom_grids_upload">
           <div className="custom_form">
-            <input type="text" placeholder="Camera" />
-            <select name="" id="">
-              <option value="">Lens manufacturer</option>
-            </select>
-            <input type="text" placeholder="Lens model" />
+            <Select
+              placeholder="Camera"
+              styles={customStyles}
+              options={cameraOptions}
+              value={selectedCamera}
+              onChange={handleSelectCamera}
+            />
+            <Select
+              placeholder="Lens manufacturer"
+              styles={customStyles}
+              options={cameraManufacter}
+              value={selectedCameraM}
+              onChange={handleSelectCameraM}
+            />
+            <input
+              type="text"
+              placeholder="Lens model"
+              value={lensModel}
+              onChange={(e) => setLensModel(e.target.value)}
+            />
             <textarea placeholder="Description"></textarea>
-            <div className="main_btn_temp">
+            <div className="main_btn_temp" onClick={saveGrid}>
               <p>Send</p>
               <ArrowRight />
             </div>
@@ -81,184 +251,8 @@ function AffiliateProgram() {
           </div>
         </div>
       </div>
-      <section className="top_contributors container">
-        <div className="top_contributors_title">
-          <h2>Top contributors</h2>
-          <NavLink to="/top-contributors">
-            <div className="main_btn_temp">
-              <p>See all</p>
-              <ArrowRight />
-            </div>
-          </NavLink>
-        </div>
-        <div className="top_contributors_list">
-          <div className="top_contributor">
-            <h4>1.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>2.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>3.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>4.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>5.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>6.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>7.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>8.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>9.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>10.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>11.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>12.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>13.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>14.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>15.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TopContributorsList />
+      <Snackbar text={snackText} status={snackStatus} visible={visibleSnack} />
     </>
   );
 }

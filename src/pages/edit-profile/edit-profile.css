@@ -44,7 +44,9 @@
   height: 204px;
 }
 .edit_user_avatar img {
-  width: 100%;
+  width: 197px;
+  height: 197px;
+  object-fit: cover;
   object-fit: cover;
   border-radius: 10px;
 }

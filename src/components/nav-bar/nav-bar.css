@@ -74,3 +74,36 @@ nav {
   letter-spacing: 0%;
   text-align: left;
 }
+
+.nav_user_profile {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.nav_user_profile img {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav_user_profile h4 {
+  color: #fff;
+  font-family: FuturaCyrillicMedium;
+  font-size: 15px;
+  font-weight: 450;
+
+  letter-spacing: 0%;
+}
+.nav_user_profile p {
+  font-size: 12px;
+  color: #fff;
+  font-family: FuturaCyrillicMedium;
+
+  font-weight: 450;
+
+  letter-spacing: 0%;
+}

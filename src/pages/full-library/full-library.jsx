@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./full-library.css";
-import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
-import { NavLink } from "react-router-dom";
-import { ReactComponent as Search } from "../../assets/icons/browse.svg";
-import { ReactComponent as Success } from "../../assets/icons/success.svg";
-import { allData } from "./data";
-import LibraryCard from "../../components/library-card/library-card";
-import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
-import Switch from "../../components/switch/switch";
-import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
-import { ReactComponent as ContributionIcon } from "../../assets/icons/contribution-icon.svg";
-import contributor from "../../assets/images/contributor.png";
-import { mainApi } from "../../components/utils/main-api";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
+import { ReactComponent as Search } from "../../assets/icons/browse.svg";
+
+import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
+import { ReactComponent as Success } from "../../assets/icons/success.svg";
+
+import LibraryCard from "../../components/library-card/library-card";
+import Switch from "../../components/switch/switch";
+import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
+import { mainApi } from "../../components/utils/main-api";
 import { getGridsAction } from "../../redux/grids-reducer";
+import { allData } from "./data";
+import "./full-library.css";
+import TopContributorsList from "../../components/top-contributos-list/top-contributos-list";
 
 function FullLibrary() {
   React.useEffect(() => {
@@ -30,12 +31,14 @@ function FullLibrary() {
   const getGrids = () => {
     mainApi.getGridsApi().then((userData) => {
       dispatch(getGridsAction(userData));
+      setData(userData);
     });
   };
+
   useEffect(() => {
     getGrids();
   }, []);
-  console.log(data);
+
   return (
     <>
       <div className="header_template container">
@@ -96,7 +99,7 @@ function FullLibrary() {
             ""
           )}
           <div className="library_items_list">
-            {data?.map((item, index) => (
+            {data.map((item, index) => (
               <LibraryCard key={index} item={item} />
             ))}
           </div>
@@ -131,184 +134,7 @@ function FullLibrary() {
           </NavLink>
         </div>
       </section>
-      <section className="top_contributors container">
-        <div className="top_contributors_title">
-          <h2>Top contributors</h2>
-          <NavLink to="/top-contributors">
-            <div className="main_btn_temp">
-              <p>See all</p>
-              <ArrowRight />
-            </div>
-          </NavLink>
-        </div>
-        <div className="top_contributors_list">
-          <div className="top_contributor">
-            <h4>1.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>2.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>3.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>4.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>5.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>6.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>7.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>8.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>9.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>10.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>11.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>12.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>13.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>14.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-          <div className="top_contributor">
-            <h4>15.</h4>
-            <img src={contributor} alt="" />
-            <div className="top_contributor_desc">
-              <p>Annette Black</p>
-              <div>
-                <ContributionIcon />
-                <span>1274</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TopContributorsList />
     </>
   );
 }
