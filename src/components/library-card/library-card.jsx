@@ -5,14 +5,17 @@ import "./library-card.css";
 import { useNavigate } from "react-router-dom";
 
 function LibraryCard({ item }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const userProfile = (id) => {
-    navigate(`/user/${id}`)
-  }
+    navigate(`/user/${id}`);
+  };
   return (
-    <div className="library_item_card"  onClick={() => userProfile(item.user._id)}>
+    <div className="library_item_card">
       <div className="library_item_card_img">
-        <div className="library_item_card_author">
+        <div
+          className="library_item_card_author"
+          onClick={() => userProfile(item.user._id)}
+        >
           <>
             <p>{item.user.name}</p>
             <img
@@ -29,11 +32,21 @@ function LibraryCard({ item }) {
           <p>{item.lens_model}</p>
         </div>
       </div>
-      <div className="library_item_card_price library_item_pricely">
-        <p>Download</p>
+      {item.file ? (
+        <a href={`http://localhost:3001${item.file}`}>
+          <div className="library_item_card_price library_item_pricely">
+            <p>Download</p>
 
-        <ArrowRight />
-      </div>
+            <ArrowRight />
+          </div>
+        </a>
+      ) : (
+        <div className="library_item_card_price library_item_pricely">
+          <p>Download</p>
+
+          <ArrowRight />
+        </div>
+      )}
     </div>
   );
 }

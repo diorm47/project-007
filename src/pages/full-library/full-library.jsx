@@ -25,12 +25,15 @@ function FullLibrary() {
   }, []);
   const gridsData = useSelector((state) => state.grids);
   const dispatch = useDispatch();
+  const [searchData, setSearchData] = useState();
+
   const [data, setData] = useState(gridsData || []);
   const [currentPage, setCurrentPage] = useState(0);
 
   const getGrids = () => {
     mainApi.getGridsApi().then((userData) => {
       dispatch(getGridsAction(userData));
+
       setData(userData);
     });
   };
@@ -38,6 +41,18 @@ function FullLibrary() {
   useEffect(() => {
     getGrids();
   }, []);
+
+  useEffect(() => {
+    if (gridsData && searchData) {
+      const filteredData = gridsData.filter((item) =>
+        item.lens_model.toLowerCase().includes(searchData.toLowerCase())
+      );
+      setData(filteredData);
+    }
+    if (!searchData) {
+      setData(gridsData);
+    }
+  }, [gridsData, searchData]);
 
   return (
     <>
@@ -70,7 +85,12 @@ function FullLibrary() {
             <h2>Camera and Lens</h2>
           </div>
           <div className="full_library_filter_search">
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchData}
+              onChange={(e) => setSearchData(e.target.value)}
+            />
             <Search />
           </div>
           <div className="filter_apply_btn">
@@ -98,11 +118,19 @@ function FullLibrary() {
           ) : (
             ""
           )}
-          <div className="library_items_list">
-            {data.map((item, index) => (
-              <LibraryCard key={index} item={item} />
-            ))}
-          </div>
+
+          {data && data.length ? (
+            <div className="library_items_list">
+              {data.map((item, index) => (
+                <LibraryCard key={index} item={item} />
+              ))}
+            </div>
+          ) : (
+            <div className="empty_assets">
+              <p>Nothing found</p>
+            </div>
+          )}
+
           {data && data.length > 24 ? (
             <div className="library_items_bottom_filter">
               <TutorialPagination

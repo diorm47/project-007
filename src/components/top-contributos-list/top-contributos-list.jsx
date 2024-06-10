@@ -37,7 +37,7 @@ function TopContributorsList() {
       </div>
       <div className="top_contributors_list">
         {usersList.slice(0, 15).map((data, index) => (
-          <ContributorCard data={data} number={index} />
+          <ContributorCard data={data} number={index} key={index} />
         ))}
       </div>
     </section>

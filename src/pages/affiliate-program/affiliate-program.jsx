@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./affiliate-program.css";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
@@ -135,6 +135,7 @@ function AffiliateProgram() {
     },
   ];
   const [lensModel, setLensModel] = useState();
+  const [selectedFile, setSelectedFile] = useState();
   const [selectedCamera, setSelectedCamera] = useState(null);
   const handleSelectCamera = (selectedOption) => {
     setSelectedCamera(selectedOption);
@@ -149,6 +150,7 @@ function AffiliateProgram() {
       camera: selectedCamera.value,
       lens_model: lensModel,
       camera_manufacturer: selectedCameraM.value,
+      file: selectedFile,
     };
     mainApi
       .createGridsApi(gridData)
@@ -169,6 +171,34 @@ function AffiliateProgram() {
         snackOptions(errorMessage, "error");
       });
   };
+
+  const imgRef = useRef(null);
+
+  const handleFileChange = async (e) => {
+    try {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("http://localhost:3001/file", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setSelectedFile(data.url);
+      } else {
+        console.error("Failed to upload image:", response.statusText);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="header_template container">
@@ -240,11 +270,20 @@ function AffiliateProgram() {
           </div>
           <div className="custom_upload">
             <UploadIcon />
+            <input
+              type="file"
+              onChange={handleFileChange}
+              hidden
+              ref={imgRef}
+            />
             <p>
               Select a file from local drive <br /> or <span>drag it here</span>
             </p>
             <h4>(The download file cannot be larger than 15 MB)</h4>
-            <div className="main_btn_temp">
+            <div
+              className="main_btn_temp"
+              onClick={() => imgRef.current.click()}
+            >
               <p>Import</p>
               <ArrowRight />
             </div>{" "}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./home.css";
 import { ReactComponent as Browse } from "../../assets/icons/browse.svg";
 import { ReactComponent as More } from "../../assets/icons/more.svg";
@@ -311,6 +311,7 @@ function Home() {
       ),
     },
   ];
+
   return (
     <>
       <header className="home_header">
@@ -342,7 +343,11 @@ function Home() {
               />
             </div>
             <div className="header_form_select">
-              <Select placeholder="Lens model" styles={customStyles} options={lensModel} />
+              <Select
+                placeholder="Lens model"
+                styles={customStyles}
+                options={lensModel}
+              />
             </div>
             <div className="main_btn_temp ">
               <p>Browse</p>

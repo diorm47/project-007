@@ -67,7 +67,6 @@ function App() {
           <Route path="/edit-profile" element={<EditProfile getMe={getMe} />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/user/:id" element={<User />} />
-
           <Route path="/full-library" element={<FullLibrary />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
