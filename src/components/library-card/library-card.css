@@ -23,6 +23,7 @@
   justify-content: flex-end;
   gap: 10px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 .library_item_card_author p {
   /* PC & Tablet/H6/Light */

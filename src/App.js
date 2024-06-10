@@ -22,6 +22,7 @@ import TutorialPage from "./pages/tutorial-page/tutorial-page";
 import { mainApi } from "./components/utils/main-api";
 import { useDispatch } from "react-redux";
 import { loginUserAction } from "./redux/user-reducer";
+import User from "./pages/profile/user";
 
 function App() {
   const location = useLocation();
@@ -61,10 +62,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/auth" element={<Auth  />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/reset" element={<Reset />} />
           <Route path="/edit-profile" element={<EditProfile getMe={getMe} />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/user/:id" element={<User />} />
+
           <Route path="/full-library" element={<FullLibrary />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />

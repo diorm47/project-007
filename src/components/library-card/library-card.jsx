@@ -2,10 +2,15 @@ import React from "react";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
 import avatar from "../../assets/icons/default-avatar.jpg";
 import "./library-card.css";
+import { useNavigate } from "react-router-dom";
 
 function LibraryCard({ item }) {
+  const navigate = useNavigate()
+  const userProfile = (id) => {
+    navigate(`/user/${id}`)
+  }
   return (
-    <div className="library_item_card">
+    <div className="library_item_card"  onClick={() => userProfile(item.user._id)}>
       <div className="library_item_card_img">
         <div className="library_item_card_author">
           <>

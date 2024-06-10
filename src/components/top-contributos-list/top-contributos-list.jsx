@@ -10,13 +10,15 @@ import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg
 import ContributorCard from "../contributor-card/contributor-card";
 function TopContributorsList() {
   const allUsers = useSelector((state) => state.users);
+  const sortedUsers = allUsers.sort((a, b) => b.grids - a.grids);
   const dispatch = useDispatch();
-  const [usersList, setUsersList] = useState(allUsers);
+  const [usersList, setUsersList] = useState(sortedUsers);
   const getUsers = () => {
     mainApi.getAllUsers().then((users) => {
       dispatch(getAllUsersAction(users));
-      setUsersList(users);
-      console.log(users);
+      const sorted = users.sort((a, b) => b.grids - a.grids);
+
+      setUsersList(sorted);
     });
   };
   useEffect(() => {
@@ -34,12 +36,9 @@ function TopContributorsList() {
         </NavLink>
       </div>
       <div className="top_contributors_list">
-        {usersList
-          .reverse()
-          .slice(0, 15)
-          .map((data, index) => (
-            <ContributorCard data={data} number={index}/>
-          ))}
+        {usersList.slice(0, 15).map((data, index) => (
+          <ContributorCard data={data} number={index} />
+        ))}
       </div>
     </section>
   );

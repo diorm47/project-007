@@ -92,6 +92,12 @@ class MainApi {
       method: "GET",
     });
   }
+  async getUser(data) {
+    return this._sendRequest({
+      endpoint: `/user/${data}`,
+      method: "GET",
+    });
+  }
 }
 
 export const mainApi = new MainApi(mainApiOptions);

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./top-contributors.css";
 import { ReactComponent as Arrow } from "../../assets/icons/nav-link-arrow.svg";
 import { NavLink } from "react-router-dom";
-import { allData } from "./data.js";
+
 import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
 import ContributorCard from "../../components/contributor-card/contributor-card";
 import { ReactComponent as ArrowRight } from "../../assets/icons/arrow-right.svg";
+import { mainApi } from "../../components/utils/main-api.js";
+import { getAllUsersAction } from "../../redux/users-reducer.jsx";
+import { useDispatch, useSelector } from "react-redux";
 
 function TopContributors() {
   React.useEffect(() => {
@@ -14,8 +17,25 @@ function TopContributors() {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
-  const [data, setData] = useState([]);
+
   const [currentPage, setCurrentPage] = useState(0);
+
+  const allUsers = useSelector((state) => state.users)
+  const sortedUser = allUsers.sort((a, b) => b.grids - a.grids)
+  const [allData, setAllData] = useState(sortedUser);
+  const [data, setData] = useState(sortedUser);
+  const dispatch = useDispatch();
+
+  const getUsers = () => {
+    mainApi.getAllUsers().then((users) => {
+      dispatch(getAllUsersAction(users));
+      const sorted = users.sort((a, b) => b.grids - a.grids)
+      setAllData(sorted);
+    });
+  };
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <>
@@ -40,27 +60,33 @@ function TopContributors() {
         </div>
       </div>
       <div className="top_contributors_wrapper container">
-        <TutorialPagination
-          items={allData}
-          setData={setData}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          itemsPerPage={30}
-        />
+        {data && data.length > 30 ? (
+          <TutorialPagination
+            items={allData}
+            setData={setData}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            itemsPerPage={30}
+          />
+        ) : (
+          ""
+        )}
         <div className="top_contributors_cards">
-          {data && data.length
-            ? data.map((item, index) => (
-                <ContributorCard key={index} data={item} number={index + 1} />
-              ))
-            : ""}
+          {data.map((data, index) => (
+            <ContributorCard data={data} number={index} />
+          ))}
         </div>
-        <TutorialPagination
-          items={allData}
-          setData={setData}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          itemsPerPage={30}
-        />
+        {data && data.length > 30 ? (
+          <TutorialPagination
+            items={allData}
+            setData={setData}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            itemsPerPage={30}
+          />
+        ) : (
+          ""
+        )}
       </div>
       <section className="join_community">
         <div className="join_community_wrapper">

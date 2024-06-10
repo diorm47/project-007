@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { ReactComponent as Facebook } from "../../assets/icons/contacts/facebook.svg";
@@ -9,67 +8,81 @@ import avatar from "../../assets/icons/default-avatar.jpg";
 import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
 import { ReactComponent as Settings } from "../../assets/icons/settings.svg";
 import { mainApi } from "../../components/utils/main-api";
-import { getGridsAction } from "../../redux/grids-reducer";
 import { allData } from "../full-library/data";
 import "./profile.css";
 
+import { useSelector } from "react-redux";
 import LibraryCard from "../../components/library-card/library-card";
 import SharePage from "../../components/share-page/share-page";
 import TutorialPagination from "../../components/tutorial-pagination/tutorial-pagination";
 
-function Profile() {
-  const userData = useSelector((state) => state.user);
+function User() {
+  const params = useParams();
+  const navigate = useNavigate();
+  const me = useSelector((state) => state.user);
+  const [userData, setUserData] = useState([]);
+  const [isMe, setIsme] = useState(false);
   React.useEffect(() => {
     document.title = `Profile ${userData.name} | Matchmove machine`;
-  }, []);
+  }, [userData.name]);
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
-  const navigate = useNavigate();
 
-  const gridsData = useSelector((state) => state.grids);
-  const filteredData = gridsData.filter(
-    (item) => item.user._id === userData._id
-  );
-  const dispatch = useDispatch();
-  const [data, setData] = useState(filteredData || []);
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+
+  const getUser = () => {
+    mainApi.getUser(params.id).then((data) => {
+      setUserData(data);
+    });
+  };
 
   const getGrids = () => {
     mainApi.getGridsApi().then((grids) => {
-      dispatch(getGridsAction(grids));
-      setData(grids.filter((item) => item.user._id === userData._id));
+      setData(grids.filter((item) => item.user._id === params.id));
     });
   };
-  useEffect(() => {
-    getGrids();
-  }, []);
 
+  useEffect(() => {
+    getUser();
+    getGrids();
+    if (params.id == me._id) {
+      setIsme(true);
+    }
+  }, []);
   const logout = () => {
     localStorage.clear();
     navigate("/");
   };
-
   return (
     <>
       <div className="profile_page_header">
         <div className="profile_page_header_content container">
           <div className="profile_page_header_content_top_actions">
             <div className="profile_page_header_content_top_actions_left">
-              <NavLink to="/edit-profile">
-                <button className="edit_profile_btn">
-                  <Settings />
-                </button>
-              </NavLink>
+              {isMe ? (
+                <NavLink to="/edit-profile">
+                  <button className="edit_profile_btn">
+                    <Settings />
+                  </button>
+                </NavLink>
+              ) : (
+                ""
+              )}
               <div className="profile_username">
                 <p>
                   <span>{userData.name}</span>
                 </p>
               </div>
             </div>
-            <button className="logout_btn" onClick={logout}>
-              <Logout />
-            </button>
+            {isMe ? (
+              <button className="logout_btn" onClick={logout}>
+                <Logout />
+              </button>
+            ) : (
+              ""
+            )}
           </div>
           <div className="profile_page_infs">
             <div className="profile_page_infs_left">
@@ -177,4 +190,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default User;

@@ -49,6 +49,7 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .top_contributor_desc p {
@@ -60,6 +61,7 @@
   line-height: 31px;
   letter-spacing: 0%;
   text-align: left;
+  cursor: pointer;
 }
 
 .top_contributor_desc div {
